@@ -3352,6 +3352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1416054745}
   - component: {fileID: 1416054744}
+  - component: {fileID: 1416054746}
   m_Layer: 0
   m_Name: meleeBox
   m_TagString: Untagged
@@ -3424,6 +3425,32 @@ Transform:
   m_Father: {fileID: 1733815213}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1416054746
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416054743}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1528170715
 GameObject:
   m_ObjectHideFlags: 0
@@ -3723,6 +3750,8 @@ MonoBehaviour:
   rayDis: 0.1
   rayCastOrigin: {fileID: 213121753}
   canJump: 1
+  faceR: 0
+  faceL: 0
 --- !u!50 &1733815210
 Rigidbody2D:
   serializedVersion: 4
@@ -3920,6 +3949,7 @@ MonoBehaviour:
   enToCharge: 0.25
   enToLife: 0.25
   timer: 0
+  disableEner: 0
   energyUI: {fileID: 59831544}
 --- !u!114 &1733815219
 MonoBehaviour:
@@ -3935,6 +3965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgrade: 0
   meleeBox: {fileID: 1416054743}
+  holdTime: 0.5
 --- !u!1 &1758521039
 GameObject:
   m_ObjectHideFlags: 0

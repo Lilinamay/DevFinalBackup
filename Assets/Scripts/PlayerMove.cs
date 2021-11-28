@@ -45,6 +45,9 @@ public class PlayerMove : MonoBehaviour
     float onfloorY;
     float jumpY;
 
+    public bool faceR;
+    public bool faceL;
+
 
 
     // Start is called before the first frame update
@@ -59,6 +62,31 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (!myRenderer.flipX)
+        {
+            faceR = true;
+            faceL = false;
+        }
+        if (myRenderer.flipX)
+        {
+            faceR = false;
+            faceL = true;
+        }
+
+        if(myBody.velocity.y == 0)
+        {
+            Globals.playerY = 0;
+        }
+        if (myBody.velocity.y < 0)
+        {
+            Globals.playerY = -1;
+        }
+        if (myBody.velocity.y > 0)
+        {
+            Globals.playerY = 1;
+        }
+
         if (onFloor && !onPlatform)
         {
             onfloorY = transform.position.y;
@@ -323,6 +351,8 @@ public class PlayerMove : MonoBehaviour
         public static bool CamInair = false;
         public static float jumpDistance;
         public static float CamFloorY;
+        public static int playerY;
+
     }
 
 }
