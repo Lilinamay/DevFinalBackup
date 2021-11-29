@@ -13,6 +13,9 @@ public class playerEnergy : MonoBehaviour
     public bool disableEner = false;
 
     public Image energyUI;
+    public GameObject bullet;
+    public float shootSpeed;
+    float shotCD = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +31,10 @@ public class playerEnergy : MonoBehaviour
         {
             energyToLife();
         }
+        if (shotCD > 0)
+        {
+            shotCD -= Time.deltaTime;
+        }
     }
 
     void energyToLife()
@@ -38,10 +45,29 @@ public class playerEnergy : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.A))
         {
-            if (timer < 1)
+            if (timer < 1 && shotCD <=0)
             {
                 Debug.Log("charged Shot");
                 energy -= enToCharge;
+                GameObject newBall = Instantiate(bullet, transform.position, transform.rotation); //default to player's position/rotation
+                newBall.transform.SetParent(gameObject.transform);
+                newBall.GetComponent<bulletBehavior>().OriginPos = gameObject.transform.position;
+                float dir = 0f;
+                if (GetComponent<PlayerMove>().faceR)
+                {
+                    dir = 1f;
+                }
+                else
+                {
+                    newBall.GetComponent<SpriteRenderer>().flipX = true;    //flip ball 
+                    dir = -1f;      //opposite direction
+                }
+                newBall.transform.localPosition = new Vector3(dir * 1f, -0.1f); ///local position relative to player
+                newBall.GetComponent<Rigidbody2D>().velocity = new Vector3(gameObject.GetComponent<Rigidbody2D>().velocity.x + dir * shootSpeed, 0f);  //ball move
+                shotCD = 1;
+                //hasShoot = true;
+               //resetA = true;
+
             }
             if (timer > 1 && GetComponent<playerHealth>().playerHealthstat< GetComponent<playerHealth>().myHealth)
             {

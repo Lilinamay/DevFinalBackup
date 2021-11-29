@@ -7,7 +7,8 @@ public class enemyBehavior : MonoBehaviour
     public int enemyHealth;
     public bool added;
     public int myHealth;
-    public float attackedTimer;
+    public float attackedTimer = 0;
+    public float rangedTimer = 0;
 
 
     // Start is called before the first frame update
@@ -23,6 +24,10 @@ public class enemyBehavior : MonoBehaviour
         if (attackedTimer > 0)
         {
             attackedTimer -= Time.deltaTime;
+        }
+        if (rangedTimer > 0)
+        {
+            rangedTimer -= Time.deltaTime;
         }
     }
 
@@ -52,6 +57,16 @@ public class enemyBehavior : MonoBehaviour
             {
                 enemyHealth--;
                 attackedTimer = 0.3F;
+            }
+        }
+
+        if(collision.gameObject.tag == "bullet")
+        {
+            if(rangedTimer <= 0)
+            {
+                Debug.Log("range attacked");
+                enemyHealth--;
+                rangedTimer = 0.5f;
             }
         }
     }

@@ -14,6 +14,7 @@ public class playerAttack : MonoBehaviour
     float distanceX;
     float distanceY;
     bool startA;
+    float chargeTimer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,8 +27,7 @@ public class playerAttack : MonoBehaviour
     {
         distanceX = gameObject.transform.position.x - meleeBox.transform.position.x;
         distanceY = gameObject.transform.position.y - meleeBox.transform.position.y;
-        if (!upgrade)
-        {
+
             if (Input.GetKey(KeyCode.X))
             {
                 if(!meleeBox.activeSelf)
@@ -44,7 +44,8 @@ public class playerAttack : MonoBehaviour
                 timer = 0;
                 countTime = false;
             }
-        }
+
+
 
         meleeBoxBehav();
 

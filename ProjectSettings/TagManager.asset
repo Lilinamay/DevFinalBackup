@@ -8,6 +8,7 @@ TagManager:
   - enemy
   - checkpoint
   - platform
+  - bullet
   layers:
   - Default
   - TransparentFX
