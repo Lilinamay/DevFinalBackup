@@ -7,6 +7,7 @@ public class enemyBehavior : MonoBehaviour
     public int enemyHealth;
     public bool added;
     public int myHealth;
+    public float attackedTimer;
 
 
     // Start is called before the first frame update
@@ -19,6 +20,10 @@ public class enemyBehavior : MonoBehaviour
     void Update()
     {
         HealthManage();
+        if (attackedTimer > 0)
+        {
+            attackedTimer -= Time.deltaTime;
+        }
     }
 
     void HealthManage()
@@ -36,6 +41,18 @@ public class enemyBehavior : MonoBehaviour
         {
             Debug.Log("i am dead");
             gameObject.SetActive(false);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "meleeBox")
+        {
+            if(attackedTimer <= 0)
+            {
+                enemyHealth--;
+                attackedTimer = 0.3F;
+            }
         }
     }
 }
