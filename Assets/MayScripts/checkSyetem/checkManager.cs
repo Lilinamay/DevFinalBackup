@@ -30,6 +30,10 @@ public class checkManager : MonoBehaviour
     GameObject newOptionsUI;
     public GameObject optionObjectUI;
     public GameObject fluteManager;
+
+    public Animator PlayerAnimator;
+
+    Rigidbody2D mybody;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +45,7 @@ public class checkManager : MonoBehaviour
         itemList = new List<GameObject>();
 
         fluteManager.SetActive(false);
+        mybody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -182,6 +187,9 @@ public class checkManager : MonoBehaviour
     {
         if (!first)
         {
+            PlayerAnimator.SetBool("isSitting", true);
+            PlayerAnimator.SetBool("isStanding", false);
+            PlayerAnimator.SetBool("isWalking", false);
             GetComponent<PlayerMove>().disableMove = true;
             GetComponent<playerEnergy>().disableEner = true;
             //player sit
@@ -191,6 +199,13 @@ public class checkManager : MonoBehaviour
             newOptions.transform.localPosition = new Vector3(collObject.transform.position.x, collObject.transform.position.y + 6f); ///local position relative to checkpoint
             newOptionsUI = Instantiate(optionObjectUI, collObject.transform.position, collObject.transform.rotation);
             newOptionsUI.transform.localPosition = new Vector3(collObject.transform.position.x, collObject.transform.position.y + 7.72f); ///local position relative to checkpoint
+            PlayerMove.Globals.ApplyV = false;
+            transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f);
+            //mybody.constraints = RigidbodyConstraints2D.FreezePositionY;
+            //mybody.constraints = RigidbodyConstraints2D.un
+            mybody.gravityScale = 0.0f;
+
+
             //create new object
         }
 
@@ -219,6 +234,8 @@ public class checkManager : MonoBehaviour
                 {
                     Debug.Log("play flute");
                     fluteManager.SetActive(true);
+                    PlayerAnimator.SetBool("isFlute", true);
+                    PlayerAnimator.SetBool("isSitting", false);
                 }
                 if (option == 3)
                 {
@@ -227,6 +244,13 @@ public class checkManager : MonoBehaviour
                     GetComponent<playerEnergy>().disableEner = false;
                     option = 0;
                     fluteManager.SetActive(false);
+                    PlayerMove.Globals.ApplyV = true;
+                    mybody.gravityScale = 4.5f;
+                    transform.position = new Vector3(transform.position.x, transform.position.y - 1);
+                    PlayerAnimator.SetBool("isFlute", false);
+                    PlayerAnimator.SetBool("isSitting", false);
+                    PlayerAnimator.SetBool("isStanding", true);
+                    
                 }
             }
 

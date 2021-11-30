@@ -9,18 +9,20 @@ public class fluteRe : MonoBehaviour
     public float maxVolume;
     public float attackTime;
     public float releaseTime;
+    
 
     public KeyCode keyToPlay = KeyCode.S;
 
 
     public enum ASRState { inactive = 0, attack, sustain, release }
     public ASRState asrState;
-
+    public GameObject musicNote;
     // Start is called before the first frame update
     void Start()
     {
         asrState = ASRState.inactive;
         audioSource.volume = 0f;
+        musicNote.SetActive(false);
     }
 
     // Update is called once per frame
@@ -31,6 +33,7 @@ public class fluteRe : MonoBehaviour
         //if we press down "A" for the length of attack time, we reach max volume
         if (Input.GetKey(keyToPlay))
         {
+            //musicNote.SetActive(true);
             switch (asrState)
             {
                 case ASRState.inactive:
@@ -58,6 +61,7 @@ public class fluteRe : MonoBehaviour
 
         else
         {
+            //musicNote.SetActive(false);
             switch (asrState)
             {
                 case ASRState.inactive:

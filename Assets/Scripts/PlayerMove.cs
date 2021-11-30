@@ -50,6 +50,7 @@ public class PlayerMove : MonoBehaviour
 
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -247,7 +248,7 @@ public class PlayerMove : MonoBehaviour
 
     void JumpPhysics()    //gravity multiplier
     {
-        if (myBody.velocity.y < 0)
+        if (myBody.velocity.y < 0 && Globals.ApplyV)
         {
             myBody.velocity += Vector2.up * Physics2D.gravity.y * (gravityMultiplier - 1f) * Time.deltaTime;
         }
@@ -352,6 +353,7 @@ public class PlayerMove : MonoBehaviour
         public static float jumpDistance;
         public static float CamFloorY;
         public static int playerY;
+        public static bool ApplyV = true;
 
     }
 
