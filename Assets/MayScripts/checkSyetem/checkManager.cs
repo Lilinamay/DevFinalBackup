@@ -246,7 +246,7 @@ public class checkManager : MonoBehaviour
                     fluteManager.SetActive(false);
                     PlayerMove.Globals.ApplyV = true;
                     mybody.gravityScale = 4.5f;
-                    transform.position = new Vector3(transform.position.x, transform.position.y - 1);
+                    //åtransform.position = new Vector3(transform.position.x, transform.position.y - 1);
                     PlayerAnimator.SetBool("isFlute", false);
                     PlayerAnimator.SetBool("isSitting", false);
                     PlayerAnimator.SetBool("isStanding", true);
