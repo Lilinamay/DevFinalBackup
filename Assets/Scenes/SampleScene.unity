@@ -450,7 +450,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.5707547, g: 1, b: 0.9713837, a: 1}
+  m_Color: {r: 0.68090004, g: 1, b: 0.57254905, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -468,7 +468,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 129839800}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.4, y: 6.5, z: 0}
+  m_LocalPosition: {x: 37.01, y: 0.08, z: 0}
   m_LocalScale: {x: 1, y: 6.18, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -910,7 +910,7 @@ GameObject:
   - component: {fileID: 385363905}
   - component: {fileID: 385363903}
   - component: {fileID: 385363904}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: enemyB
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -964,6 +964,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpeed: 2
   enemyMaxDistance: 10
+  EnemyBAnimator: {fileID: 385363903}
+  RayDis: 15
+  alert: 0
+  dashMaxDis: 6
+  orgPosx: 0
+  dashCD: 0
+  chargeCD: 0
 --- !u!114 &385363905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1018,8 +1025,8 @@ BoxCollider2D:
   m_Offset: {x: 0.0017843246, y: -0.15215874}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.79}
-    oldSize: {x: 1.8299999, y: 1.1603951}
+    pivot: {x: 0.5, y: 0.458}
+    oldSize: {x: 1.14, y: 1.9306575}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
