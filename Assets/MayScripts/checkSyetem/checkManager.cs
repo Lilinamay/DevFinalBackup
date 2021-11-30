@@ -32,6 +32,7 @@ public class checkManager : MonoBehaviour
     public GameObject fluteManager;
 
     public Animator PlayerAnimator;
+    bool duringRes = false;
 
     Rigidbody2D mybody;
     // Start is called before the first frame update
@@ -63,7 +64,7 @@ public class checkManager : MonoBehaviour
 
         options();
         checkerKey();
-        respawnOptions();
+        //respawnOptions();
 
 
 
@@ -72,9 +73,7 @@ public class checkManager : MonoBehaviour
             if (!saveRecord)
             { 
             SaveX = transform.position.x;
-            SaveY = transform.position.y;
-            //SaveSparkle = FindObjectOfType<playerInteract>().starCount;
-            //SaveBullet = FindObjectOfType<playerShoot>().bulletCount;
+            SaveY = transform.position.y-0.5f;
             Debug.Log("progress saved");
             //check = false;
             itemList.Clear();
@@ -90,8 +89,7 @@ public class checkManager : MonoBehaviour
             Debug.Log(new Vector3(SaveX, SaveY));                                                               //add anything that need to be reset after respawn
             GetComponent<playerHealth>().playerHealthstat = GetComponent<playerHealth>().myHealth;
             GetComponent<playerHealth>().invinsibleTimer = GetComponent<playerHealth>().invinsibleT;
-            //FindObjectOfType<playerInteract>().starCount = SaveSparkle;
-            //FindObjectOfType<playerShoot>().bulletCount = SaveBullet;
+            option = 1;
             foreach (GameObject item in itemList)
             {
                 item.SetActive(true);
@@ -99,12 +97,11 @@ public class checkManager : MonoBehaviour
                 {
                     item.GetComponent<enemyBehavior>().added = false;
                     item.GetComponent<enemyBehavior>().enemyHealth = item.GetComponent<enemyBehavior>().myHealth;
-                    /*if (item.name == "movingEnemy")
-                    {
-                        item.GetComponent<enemyBehavior>().enemyHealth = 1;
-                    }*/
                 }
             }
+            duringRes = true;
+            mybody.velocity = Vector3.zero;
+            createOptions();
             GetComponent<playerHealth>().respawn = false;
         }
 
@@ -130,12 +127,16 @@ public class checkManager : MonoBehaviour
             checkered = false;
             saveRecord = false;
             saved = false;
-            option = 0;
+            if (!duringRes)
+            {
+                option = 0;
+            }
             GetComponent<playerHealth>().respawnBack = false;
             if (newChecker != null)
             {
                 Destroy(newChecker);
             }
+            
         }
         if(collision.gameObject.name == "firstCheck")
         {
@@ -173,7 +174,7 @@ public class checkManager : MonoBehaviour
         }
     }
 
-    private void respawnOptions()
+    /*private void respawnOptions()
     {
         if (GetComponent<playerHealth>().respawned)
         {
@@ -181,7 +182,7 @@ public class checkManager : MonoBehaviour
             GetComponent<playerHealth>().respawned = false;
             
         }
-    }
+    }*/
     
     private void createOptions()
     {
@@ -202,7 +203,7 @@ public class checkManager : MonoBehaviour
             PlayerMove.Globals.ApplyV = false;
             transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f);
             //mybody.constraints = RigidbodyConstraints2D.FreezePositionY;
-            //mybody.constraints = RigidbodyConstraints2D.un
+
             mybody.gravityScale = 0.0f;
 
 
@@ -242,15 +243,17 @@ public class checkManager : MonoBehaviour
                     Debug.Log("leave");
                     GetComponent<PlayerMove>().disableMove = false;
                     GetComponent<playerEnergy>().disableEner = false;
+                    duringRes = false;
                     option = 0;
+                    
                     fluteManager.SetActive(false);
                     PlayerMove.Globals.ApplyV = true;
                     mybody.gravityScale = 4.5f;
-                    //åtransform.position = new Vector3(transform.position.x, transform.position.y - 1);
+                    //transform.position = new Vector3(transform.position.x, transform.position.y - 1);
                     PlayerAnimator.SetBool("isFlute", false);
                     PlayerAnimator.SetBool("isSitting", false);
                     PlayerAnimator.SetBool("isStanding", true);
-                    
+
                 }
             }
 
