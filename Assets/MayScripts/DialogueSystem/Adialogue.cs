@@ -4,12 +4,11 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class Dialogue : MonoBehaviour
+public class Adialogue : MonoBehaviour
 {
-    
-    [SerializeField] dialogueClass dialogue;
-    //[TextArea(3, 10)]
-    //[SerializeField] string[] Text;
+    public dialogueClass[] mydialogues;
+
+    public dialogueClass dialogue;
     [SerializeField] TMP_Text nameText;
     [SerializeField] TMP_Text dialogueText;
     //[SerializeField] Image avatarSprite;
@@ -22,7 +21,7 @@ public class Dialogue : MonoBehaviour
     public bool dialogue2Complete = false;
     [SerializeField] GameObject player;
 
-  
+
     [SerializeField] Queue<string> sentences;
     [SerializeField] Queue<string> names; //a list of strings
     //[SerializeField] Queue<Sprite> avatars;
@@ -35,7 +34,6 @@ public class Dialogue : MonoBehaviour
         names = new Queue<string>();
         sentences = new Queue<string>();
         //avatars = new Queue<Sprite>();
-        //textboxs = new Queue<Sprite>();
 
         //avatarSprite.enabled = false;
         textboxSprite.enabled = false; //disable without dialogue
@@ -68,11 +66,7 @@ public class Dialogue : MonoBehaviour
                 avatars.Enqueue(avatar);
             }
 
-            foreach (Sprite textbox in dialogue.textboxs)
-            {
-                textboxs.Enqueue(textbox);
-            }
-            
+
             Debug.Log("Trigger conversation " + names.Peek());
             */
 
@@ -120,13 +114,16 @@ public class Dialogue : MonoBehaviour
 
     void Update()
     {
-
+        if (mydialogues.Length <= plotNumber.Globals.maxPlotNum)
+        {
+            dialogue = mydialogues[plotNumber.Globals.plotNum];
+        }
         triggerConversation();
         if (triggered)
         {
             if (first == false)
             {
-                 //freeze player during dialogue
+                //freeze player during dialogue
 
 
                 string name = names.Dequeue();
@@ -157,7 +154,7 @@ public class Dialogue : MonoBehaviour
                     EndDialogue();
                     return;
                 }
-               
+
                 string name2 = names.Dequeue();
                 string sentence2 = sentences.Dequeue();
                 dialogueText.text = sentence2;
@@ -170,7 +167,7 @@ public class Dialogue : MonoBehaviour
                 //avatarSprite.gameObject.SetActive(true);
                 //textboxSprite.gameObject.SetActive(true);
                 nameText.text = name2;
-                
+
                 //avatarSprite.GetComponent<Image>().sprite = avatar2;
                 //textboxSprite.GetComponent<Image>().sprite = textbox2;   //input sprite/string onto placeholders in canvas
                 //Debug.Log(name2);
@@ -188,7 +185,4 @@ public class Dialogue : MonoBehaviour
             yield return null;
         }
     }
-
-
 }
-

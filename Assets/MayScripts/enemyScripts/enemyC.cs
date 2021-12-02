@@ -11,7 +11,8 @@ public class enemyC : MonoBehaviour
     private float enemyX;
     Rigidbody2D enemyBody;
     SpriteRenderer myRenderer;
-    public Animator EnemyBAnimator;
+
+    //public Animator EnemyBAnimator;
 
     public float RayDis = 10f;
     public bool alert = false;
@@ -22,6 +23,13 @@ public class enemyC : MonoBehaviour
     //public float Posx;
     public float dashCD = 0;
     public float chargeCD = 0;
+
+    public GameObject arrow;
+
+    bool hasShoot = false;
+    public float shootSpeed = 3;
+
+
     ///[SerializeField] private Sprite[] IdleSprites;
 
     //[SerializeField] private float animationSpeed = 0.3f;
@@ -75,11 +83,12 @@ public class enemyC : MonoBehaviour
             {
                 if (dashCD <= 0)
                 {
+                    hasShoot = false;
                     dashCD = 5;
                     //chargeCD = 1;
                     enemyBody.velocity = new Vector2(0, 0);
                     Debug.Log("CHARGE");
-                    EnemyBAnimator.SetBool("canCharge", true);
+                    //EnemyBAnimator.SetBool("canCharge", true);
                 }
             }
             else
@@ -94,23 +103,45 @@ public class enemyC : MonoBehaviour
             enemyBody.velocity = new Vector2(enemySpeed, 0);
         }
 
-        if (dashCD <= 4 && dashCD >= 2)
+        if (dashCD <= 4 && dashCD >= 3)
         {
             //DASH
-            enemyBody.velocity = new Vector2(enemySpeed * 2, 0);
-            EnemyBAnimator.SetBool("canCharge", false);
-            EnemyBAnimator.SetBool("canAttack", true);
-        }
-        else if (dashCD < 2 && dashCD >= 1)
-        {
+            //enemyBody.velocity = new Vector2(enemySpeed * 2, 0);
+            //EnemyBAnimator.SetBool("canCharge", false);
+            //EnemyBAnimator.SetBool("canAttack", true);
+            if (!hasShoot)
+            {
+                GameObject newBall = Instantiate(arrow, transform.position, transform.rotation); //default to player's position/rotation
+                newBall.transform.SetParent(gameObject.transform);
+                newBall.GetComponent<bulletBehavior>().OriginPos = gameObject.transform.position;
+                float dir = 0f;
+                if (myRenderer.flipX)
+                {
+                    dir = 1f;
+                }
+                else
+                {
+                    newBall.GetComponent<SpriteRenderer>().flipX = true;    //flip ball 
+                    dir = -1f;      //opposite direction
+                }
+                newBall.transform.localPosition = new Vector3(dir * 1f, -0.1f); ///local position relative to player
+                newBall.GetComponent<Rigidbody2D>().velocity = new Vector3(gameObject.GetComponent<Rigidbody2D>().velocity.x + dir * shootSpeed, 0f);  //ball move
+                hasShoot = true;
+            }
             enemyBody.velocity = new Vector2(0, 0);
-            //stop dash
+
         }
-        else if (dashCD < 1)
+        //else if (dashCD < 2 && dashCD >= 1)
+        //{
+            
+        //    //stop dash
+        //}
+        else if (dashCD < 3)
         {
             //enemyBody.velocity = new Vector3(enemySpeed, enemyBody.velocity.y);
             enemyBody.velocity = new Vector2(enemySpeed, 0);
-            EnemyBAnimator.SetBool("canAttack", false);
+            //EnemyBAnimator.SetBool("canAttack", false);
+            hasShoot = false;
         }
 
 

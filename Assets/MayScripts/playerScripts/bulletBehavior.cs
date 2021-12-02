@@ -6,6 +6,7 @@ public class bulletBehavior : MonoBehaviour
 {
     public Vector3 OriginPos;
     Vector3 myPos;
+    public float maxDis;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,7 @@ public class bulletBehavior : MonoBehaviour
     void Update()
     {
         myPos = gameObject.transform.position;
-        if(Vector3.Distance(OriginPos, myPos) > 11)
+        if(Vector3.Distance(OriginPos, myPos) > maxDis)
         {
             Destroy(gameObject);
         }
