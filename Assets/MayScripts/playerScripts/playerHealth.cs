@@ -19,7 +19,10 @@ public class playerHealth : MonoBehaviour
     public Image health3;
     public Image health4;
     public float lostA = 0.3f;
+
+    public GameObject freezeScreen;
     
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,8 +55,22 @@ public class playerHealth : MonoBehaviour
             if (invinsibleTimer <= 0)
             {
                 playerHealthstat--;                                             //-health, cameraShake maybe?
-                FindObjectOfType<camShake>().Startshake();
+                //FindObjectOfType<camShake>().Startshake();
                 invinsibleTimer = invinsibleT;
+                //FindObjectOfType<freezeScreen>().stop();
+                freezeScreen.GetComponent<freezeScreen>().stop();               //if -- health, freeze, then screen shake
+                if (GetComponent<PlayerMove>().faceR)
+                {
+                    gameObject.transform.position = new Vector3(transform.position.x - 1, transform.position.y);
+                    collision.gameObject.transform.position = new Vector3(collision.gameObject.transform.position.x+1, collision.gameObject.transform.position.y);
+                }
+                else
+                {
+                    gameObject.transform.position = new Vector3(transform.position.x + 1, transform.position.y);
+                    collision.gameObject.transform.position = new Vector3(collision.gameObject.transform.position.x - 1, collision.gameObject.transform.position.y);
+                    //gameObject.transform.localPosition = new Vector3(1, 0, 0);
+                    //collision.gameObject.transform.localPosition = new Vector3(-1, 0, 0);
+                }
                 //Debug.Log("timer" + invinsibleTimer);
             }
         }
@@ -63,7 +80,7 @@ public class playerHealth : MonoBehaviour
     {
         if (collision.tag == "enemy")
         {
-            invinsibleTimer = 0;
+            //invinsibleTimer = 0;
         }
     }
 
