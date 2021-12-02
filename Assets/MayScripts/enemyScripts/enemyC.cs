@@ -29,6 +29,8 @@ public class enemyC : MonoBehaviour
     bool hasShoot = false;
     public float shootSpeed = 3;
 
+    public LayerMask layerMask;
+
 
     ///[SerializeField] private Sprite[] IdleSprites;
 
@@ -159,10 +161,10 @@ public class enemyC : MonoBehaviour
     {
         if (!myRenderer.flipX)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left, RayDis, 7);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left, RayDis, layerMask);
             if (hit.collider)
             {
-                Debug.Log(hit.collider.name);
+                Debug.Log("enemyC" +hit.collider.name);
                 if (hit.collider.name == "Player")
                 {
                     //attack ready
@@ -180,10 +182,10 @@ public class enemyC : MonoBehaviour
         }
         if (myRenderer.flipX)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, RayDis, 7);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, RayDis, layerMask);
             if (hit.collider)
             {
-                Debug.Log(hit.collider.name);
+                Debug.Log("enemyC" + hit.collider.name);
                 if (hit.collider.name == "Player")
                 {
                     //attack ready

@@ -22,6 +22,7 @@ public class enemyBMove : MonoBehaviour
     //public float Posx;
     public float dashCD = 0;
     public float chargeCD = 0;
+    public LayerMask layerMask;
     ///[SerializeField] private Sprite[] IdleSprites;
 
     //[SerializeField] private float animationSpeed = 0.3f;
@@ -128,7 +129,7 @@ public class enemyBMove : MonoBehaviour
     {
         if (!myRenderer.flipX)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left, RayDis, 7);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left, RayDis, layerMask);
             if (hit.collider)
             {
                 Debug.Log(hit.collider.name);
@@ -149,7 +150,7 @@ public class enemyBMove : MonoBehaviour
         }
         if (myRenderer.flipX)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, RayDis, 7);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, RayDis, layerMask);
             if (hit.collider)
             {
                 Debug.Log(hit.collider.name);

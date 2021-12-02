@@ -52,6 +52,7 @@ public class playerHealth : MonoBehaviour
             if (invinsibleTimer <= 0)
             {
                 playerHealthstat--;                                             //-health, cameraShake maybe?
+                FindObjectOfType<camShake>().Startshake();
                 invinsibleTimer = invinsibleT;
                 //Debug.Log("timer" + invinsibleTimer);
             }
