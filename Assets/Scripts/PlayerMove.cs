@@ -48,7 +48,7 @@ public class PlayerMove : MonoBehaviour
     public bool faceR;
     public bool faceL;
 
-
+    public LayerMask layerMask;
 
 
     // Start is called before the first frame update
@@ -291,10 +291,10 @@ public class PlayerMove : MonoBehaviour
     private void FixedUpdate()
     {
 
-        RaycastHit2D hit = Physics2D.Raycast(rayCastOrigin.position, Vector2.down, rayDis, 7);
+        RaycastHit2D hit = Physics2D.Raycast(rayCastOrigin.position, Vector2.down, rayDis,layerMask);
         if (hit.collider)
         {
-            Debug.Log(hit.collider.name);
+            Debug.Log("playerRAYCAST:" +hit.collider.name);
             if (hit.collider.tag == "floor")
             {
                 //Debug.Log("floor below, can jump");
