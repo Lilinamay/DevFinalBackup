@@ -1012,7 +1012,7 @@ MonoBehaviour:
   EnemyBAnimator: {fileID: 385363903}
   RayDis: 15
   alert: 0
-  dashMaxDis: 6
+  dashMaxDis: 7
   orgPosx: 0
   dashCD: 0
   chargeCD: 0
@@ -5862,7 +5862,7 @@ MonoBehaviour:
   enemyMaxDistance: 10
   RayDis: 15
   alert: 0
-  dashMaxDis: 6
+  dashMaxDis: 9.5
   orgPosx: 0
   dashCD: 0
   chargeCD: 0
