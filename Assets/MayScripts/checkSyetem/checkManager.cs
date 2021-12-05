@@ -105,8 +105,15 @@ public class checkManager : MonoBehaviour
             }
             duringRes = true;
             mybody.velocity = Vector3.zero;
-            createOptions();
+            createOptions(0.5f);
             GetComponent<playerHealth>().respawn = false;
+        }
+
+        if (hometrans.comeUnder)
+        {
+            createOptions(0f);
+            hometrans.comeUnder = false;
+            duringRes = true;
         }
 
 
@@ -114,7 +121,7 @@ public class checkManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "checkpoint" && !GetComponent<playerHealth>().respawnBack)
+        if (collision.gameObject.tag == "checkpoint" && !GetComponent<playerHealth>().respawnBack && !duringRes)
         {
             Debug.Log("checkpoint");
             check = true;
@@ -173,7 +180,7 @@ public class checkManager : MonoBehaviour
                 first = false;
                 saved = true;
                 Destroy(newChecker);
-                createOptions();
+                createOptions(0.5f);
             }
         }
     }
@@ -188,7 +195,7 @@ public class checkManager : MonoBehaviour
         }
     }*/
     
-    private void createOptions()
+    private void createOptions(float upDis)
     {
         if (!first)
         {
@@ -205,7 +212,7 @@ public class checkManager : MonoBehaviour
             newOptionsUI = Instantiate(optionObjectUI, collObject.transform.position, collObject.transform.rotation);
             newOptionsUI.transform.localPosition = new Vector3(collObject.transform.position.x, collObject.transform.position.y + 7.72f); ///local position relative to checkpoint
             PlayerMove.Globals.ApplyV = false;
-            transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f);
+            transform.position = new Vector3(transform.position.x, transform.position.y + upDis);
             //mybody.constraints = RigidbodyConstraints2D.FreezePositionY;
 
             mybody.gravityScale = 0.0f;
@@ -215,6 +222,8 @@ public class checkManager : MonoBehaviour
         }
 
     }
+
+
 
     private void options()
     {
@@ -234,6 +243,7 @@ public class checkManager : MonoBehaviour
                 {
                     Debug.Log("go home, change scene");
                     fluteManager.SetActive(false);
+                    option = 0;
                     hometrans.goHome();
                 }
                 if (option == 2)

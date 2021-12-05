@@ -2271,6 +2271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   homePos: {fileID: 940767315}
   player: {fileID: 1733815208}
+  chair: {fileID: 940767313}
 --- !u!4 &591576156
 Transform:
   m_ObjectHideFlags: 0
@@ -3891,6 +3892,7 @@ GameObject:
   m_Component:
   - component: {fileID: 940767315}
   - component: {fileID: 940767314}
+  - component: {fileID: 940767316}
   m_Layer: 0
   m_Name: homeChair
   m_TagString: Untagged
@@ -3963,6 +3965,25 @@ Transform:
   m_Father: {fileID: 591576156}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &940767316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940767313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0755dfd7d21ec488bb22c22abaa4985d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comeHome: 0
+  option: 0
+  optionObject: {fileID: 6588401430377697468, guid: bee4c83a1fde24303ad4882cbf68df3e, type: 3}
+  optionObjectUI: {fileID: 7620986671176040274, guid: e0bd34100082e420788636b2669258b7, type: 3}
+  fluteManager: {fileID: 878888787}
+  PlayerAnimator: {fileID: 1733815216}
+  player: {fileID: 1733815208}
 --- !u!1 &951705329
 GameObject:
   m_ObjectHideFlags: 0

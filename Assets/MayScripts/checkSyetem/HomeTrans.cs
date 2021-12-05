@@ -8,10 +8,15 @@ public class HomeTrans : MonoBehaviour
     //private AsyncOperation sceneAsync;
     [SerializeField] Transform homePos;
     [SerializeField] GameObject player;
+    [SerializeField] GameObject chair;
+    Vector3 myOriPos;
+    HomeChair homeChair;
+    public bool comeUnder = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        homeChair = chair.GetComponent<HomeChair>();
     }
 
     // Update is called once per frame
@@ -22,13 +27,24 @@ public class HomeTrans : MonoBehaviour
 
     public void goHome()
     {
-
+        myOriPos = player.transform.position;
         player.transform.position = homePos.position;
+        homeChair.comeHome = true;
         //Object.DontDestroyOnLoad(this.gameObject);
         //SceneManager.LoadScene(1);
         //SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetSceneByBuildIndex(1));
         //StartCoroutine(loadScene(1));
     }
+
+    public void goUnder()
+    {
+        player.transform.position = myOriPos;
+        comeUnder = true;
+        
+        
+    }
+
+ 
 
 
     //IEnumerator loadScene(int index)
