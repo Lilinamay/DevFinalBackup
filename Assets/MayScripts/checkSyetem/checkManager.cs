@@ -35,6 +35,9 @@ public class checkManager : MonoBehaviour
     bool duringRes = false;
 
     Rigidbody2D mybody;
+
+    HomeTrans hometrans;
+    [SerializeField] GameObject homemanage;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +50,7 @@ public class checkManager : MonoBehaviour
 
         fluteManager.SetActive(false);
         mybody = GetComponent<Rigidbody2D>();
+        hometrans = homemanage.GetComponent<HomeTrans>();
     }
 
     // Update is called once per frame
@@ -230,6 +234,7 @@ public class checkManager : MonoBehaviour
                 {
                     Debug.Log("go home, change scene");
                     fluteManager.SetActive(false);
+                    hometrans.goHome();
                 }
                 if (option == 2)
                 {

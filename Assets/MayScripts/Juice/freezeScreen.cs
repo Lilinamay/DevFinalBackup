@@ -5,6 +5,7 @@ using UnityEngine;
 public class freezeScreen : MonoBehaviour
 {
     public float duration = 0.5f;
+
     public void stop()
     {
         {
