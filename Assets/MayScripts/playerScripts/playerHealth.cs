@@ -77,6 +77,31 @@ public class playerHealth : MonoBehaviour
                 //Debug.Log("timer" + invinsibleTimer);
             }
         }
+
+        if (collision.tag == "arrow")
+        {
+            if (invinsibleTimer <= 0)
+            {
+                playerHealthstat--;                                             //-health, cameraShake maybe?
+                invinsibleTimer = invinsibleT;
+                myRenderer.color = Color.red;
+                StartCoroutine(changeColor());
+                freezeScreen.GetComponent<freezeScreen>().stop();               //if -- health, freeze, then screen shake
+                //if (GetComponent<PlayerMove>().faceR)
+                //{
+                //    gameObject.transform.position = new Vector3(transform.position.x - 1, transform.position.y);
+                //    collision.gameObject.transform.position = new Vector3(collision.gameObject.transform.position.x + 1, collision.gameObject.transform.position.y);
+                //}
+                //else
+                //{
+                //    gameObject.transform.position = new Vector3(transform.position.x + 1, transform.position.y);
+                //    collision.gameObject.transform.position = new Vector3(collision.gameObject.transform.position.x - 1, collision.gameObject.transform.position.y);
+                //    //gameObject.transform.localPosition = new Vector3(1, 0, 0);
+                //    //collision.gameObject.transform.localPosition = new Vector3(-1, 0, 0);
+                //}
+                //Debug.Log("timer" + invinsibleTimer);
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

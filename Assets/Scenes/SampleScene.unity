@@ -688,7 +688,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1733815213}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &214160411
 GameObject:
@@ -1968,6 +1968,7 @@ MonoBehaviour:
   duration: 0.5
   magnitude: 0.08
   smoothR: 0.5
+  playerRenderer: {fileID: 1733815212}
 --- !u!1 &532655925
 GameObject:
   m_ObjectHideFlags: 0
@@ -2272,6 +2273,7 @@ MonoBehaviour:
   homePos: {fileID: 940767315}
   player: {fileID: 1733815208}
   chair: {fileID: 940767313}
+  myOriPos: {x: 0, y: 0, z: 0}
   comeUnder: 0
 --- !u!4 &591576156
 Transform:
@@ -5510,6 +5512,8 @@ GameObject:
   - component: {fileID: 1416054745}
   - component: {fileID: 1416054744}
   - component: {fileID: 1416054746}
+  - component: {fileID: 1416054747}
+  - component: {fileID: 1416054748}
   m_Layer: 0
   m_Name: meleeBox
   m_TagString: Untagged
@@ -5556,8 +5560,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 21300000, guid: 5490a649d634145a1aa596290693d82a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5575,12 +5579,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1416054743}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.54, y: -0.24, z: 0}
-  m_LocalScale: {x: 1.8507, y: 1.1245, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.272, y: 0.117, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1733815213}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1416054746
 BoxCollider2D:
@@ -5595,19 +5599,59 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.38904303, y: -0.3672757}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 4.62, y: 3.66}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.9314008, y: 1.199084}
   m_EdgeRadius: 0
+--- !u!50 &1416054747
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416054743}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!95 &1416054748
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416054743}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fd9d336aa8c544827a2453bbe21ee33f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1465874517
 GameObject:
   m_ObjectHideFlags: 0
@@ -6160,9 +6204,9 @@ Transform:
   m_LocalPosition: {x: -1.9, y: 0.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1416054745}
   - {fileID: 2113211321}
   - {fileID: 213121753}
-  - {fileID: 1416054745}
   - {fileID: 1181361464}
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -6183,6 +6227,7 @@ MonoBehaviour:
   SaveX: 0
   SaveY: 0
   itemList: []
+  collObject: {fileID: 0}
   checkered: 0
   checkObject: {fileID: 1242970751111882785, guid: b1733a4775525419fb287c182751e3e6, type: 3}
   saveRecord: 0
@@ -6271,7 +6316,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgrade: 0
   meleeBox: {fileID: 1416054743}
-  holdTime: 0.3
+  holdTime: 0.26
+  meleeAnim: {fileID: 1416054748}
 --- !u!1 &1742324389
 GameObject:
   m_ObjectHideFlags: 0
@@ -7631,7 +7677,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1733815213}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2113211322
 Animator:

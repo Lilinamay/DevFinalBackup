@@ -15,12 +15,15 @@ public class playerAttack : MonoBehaviour
     float distanceY;
     bool startA;
     float chargeTimer = 0;
+    SpriteRenderer meleeRenderer;
 
+    public Animator meleeAnim;
     // Start is called before the first frame update
     void Start()
     {
         myBody = gameObject.GetComponent<Rigidbody2D>();
         meleeBox.SetActive(false);
+        meleeRenderer = meleeBox.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -35,6 +38,7 @@ public class playerAttack : MonoBehaviour
                 {
                     Debug.Log("attackbox");
                     meleeBox.SetActive(true);
+                    meleeAnim.SetTrigger("meleeAttack");
                     countTime = true;
                     
                 }
@@ -64,7 +68,8 @@ public class playerAttack : MonoBehaviour
             {
                 if (GetComponent<PlayerMove>().faceR)
                 {
-                    if(PlayerMove.Globals.playerY == -1)
+                    meleeRenderer.flipX = false;
+                    if (PlayerMove.Globals.playerY == -1)
                     {
                         meleeBox.transform.localPosition = new Vector3(2, -1, 0);
                         Debug.Log("rightattackDown");
@@ -85,6 +90,7 @@ public class playerAttack : MonoBehaviour
                 }
                 else if (GetComponent<PlayerMove>().faceL)
                 {
+                    meleeRenderer.flipX = true;
                     if (PlayerMove.Globals.playerY == -1)
                     {
                         meleeBox.transform.localPosition = new Vector3(-2, -1, 0);
@@ -111,7 +117,7 @@ public class playerAttack : MonoBehaviour
         {
             meleeBox.transform.position = gameObject.transform.position;
             startA = false;
-            Debug.Log("noattack");
+            //Debug.Log("noattack");
         }
     }
 }

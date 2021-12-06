@@ -94,6 +94,8 @@ public class checkManager : MonoBehaviour
 
         if (GetComponent<playerHealth>().respawn == true)
         {
+            GetComponent<PlayerMove>().disableMove = true;
+            GetComponent<playerEnergy>().disableEner = true;
             transform.position = new Vector3(SaveX, SaveY);
             Debug.Log(new Vector3(SaveX, SaveY));                                                               //add anything that need to be reset after respawn
             GetComponent<playerHealth>().playerHealthstat = GetComponent<playerHealth>().myHealth;
@@ -120,7 +122,7 @@ public class checkManager : MonoBehaviour
             telBack = true;
             createOptions(0f);
             hometrans.comeUnder = false;
-            duringRes = true;
+            //duringRes = true;
         }
 
 
@@ -128,7 +130,7 @@ public class checkManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "checkpoint" && !GetComponent<playerHealth>().respawnBack && !duringRes && !telBack)
+        if (collision.gameObject.tag == "checkpoint" && !GetComponent<playerHealth>().respawnBack  && !telBack)
         {
             Debug.Log("checkpoint");
             check = true;

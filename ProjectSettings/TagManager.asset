@@ -9,6 +9,7 @@ TagManager:
   - checkpoint
   - platform
   - bullet
+  - arrow
   layers:
   - Default
   - TransparentFX
