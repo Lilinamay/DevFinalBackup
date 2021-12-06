@@ -82,10 +82,8 @@ public class HomeChair : MonoBehaviour
                     BlackAnimator.SetTrigger("isBlackOut");
                     Debug.Log("go under, change scene");
                     fluteManager.SetActive(false);
-                    
-                    hometrans.goUnder();
                     option = 0;
-
+                    StartCoroutine(waitForTrans());
 
                 }
                 if (option == 2)
@@ -125,5 +123,11 @@ public class HomeChair : MonoBehaviour
                 newOptionsUI.transform.position = new Vector3(newOptionsUI.transform.position.x, newOptionsUI.transform.position.y + 1.65f);
             }
         }
+    }
+
+    IEnumerator waitForTrans()
+    {
+        yield return new WaitForSecondsRealtime(1);
+        hometrans.goUnder();
     }
 }

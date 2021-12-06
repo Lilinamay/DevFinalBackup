@@ -21,12 +21,15 @@ public class playerHealth : MonoBehaviour
     public float lostA = 0.3f;
 
     public GameObject freezeScreen;
+
+    SpriteRenderer myRenderer;
     
 
     // Start is called before the first frame update
     void Start()
     {
         myHealth = playerHealthstat;
+        myRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -55,9 +58,9 @@ public class playerHealth : MonoBehaviour
             if (invinsibleTimer <= 0)
             {
                 playerHealthstat--;                                             //-health, cameraShake maybe?
-                //FindObjectOfType<camShake>().Startshake();
                 invinsibleTimer = invinsibleT;
-                //FindObjectOfType<freezeScreen>().stop();
+                myRenderer.color = Color.red;
+                StartCoroutine(changeColor());
                 freezeScreen.GetComponent<freezeScreen>().stop();               //if -- health, freeze, then screen shake
                 if (GetComponent<PlayerMove>().faceR)
                 {
@@ -123,4 +126,12 @@ public class playerHealth : MonoBehaviour
             health4.color = new Color(health4.color.r, health4.color.g, health4.color.b, 1);
         }
     }
+
+    IEnumerator changeColor()
+    {
+        yield return new WaitForSecondsRealtime(0.5f);
+        myRenderer.color = Color.white;
+
+    }
+
 }

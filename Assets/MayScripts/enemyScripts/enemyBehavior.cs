@@ -9,12 +9,13 @@ public class enemyBehavior : MonoBehaviour
     public int myHealth;
     public float attackedTimer = 0;
     public float rangedTimer = 0;
-
+    SpriteRenderer myRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
         myHealth = enemyHealth;
+        myRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -57,6 +58,8 @@ public class enemyBehavior : MonoBehaviour
             {
                 enemyHealth--;
                 attackedTimer = 0.3F;
+                myRenderer.color = Color.red;
+                StartCoroutine(changeColor());
             }
         }
 
@@ -69,5 +72,12 @@ public class enemyBehavior : MonoBehaviour
                 rangedTimer = 0.5f;
             }
         }
+    }
+
+    IEnumerator changeColor()
+    {
+        yield return new WaitForSecondsRealtime(0.5f);
+        myRenderer.color = Color.white;
+
     }
 }

@@ -105,6 +105,7 @@ public class checkManager : MonoBehaviour
                 {
                     item.GetComponent<enemyBehavior>().added = false;
                     item.GetComponent<enemyBehavior>().enemyHealth = item.GetComponent<enemyBehavior>().myHealth;
+                    item.GetComponent<SpriteRenderer>().color = Color.white;
                 }
             }
             duringRes = true;
@@ -228,7 +229,6 @@ public class checkManager : MonoBehaviour
     }
 
 
-
     private void options()
     {
         if(option == 0)
@@ -249,7 +249,7 @@ public class checkManager : MonoBehaviour
                     Debug.Log("go home, change scene");
                     fluteManager.SetActive(false);
                     option = 0;
-                    hometrans.goHome();
+                    StartCoroutine(waitForTrans());
                 }
                 if (option == 2)
                 {
@@ -289,6 +289,15 @@ public class checkManager : MonoBehaviour
             }
         }
     }
+
+
+
+        IEnumerator waitForTrans()
+    {
+        yield return new WaitForSecondsRealtime(1);
+        hometrans.goHome();
+    }
+
 
 
 

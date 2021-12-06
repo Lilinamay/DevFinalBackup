@@ -11,6 +11,7 @@ public class freezeScreen : MonoBehaviour
         {
             Time.timeScale = 0.0f;              //stop time
             Debug.Log("stop screen");
+            
             StartCoroutine(Wait());
         }
     }

@@ -15,6 +15,7 @@ public class playerAttack : MonoBehaviour
     float distanceY;
     bool startA;
     float chargeTimer = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,19 +66,19 @@ public class playerAttack : MonoBehaviour
                 {
                     if(PlayerMove.Globals.playerY == -1)
                     {
-                        meleeBox.transform.localPosition = new Vector3(1, -1, 0);
+                        meleeBox.transform.localPosition = new Vector3(2, -1, 0);
                         Debug.Log("rightattackDown");
                         startA = true;
                     }
                     if (PlayerMove.Globals.playerY == 0)
                     {
-                        meleeBox.transform.localPosition = new Vector3(1, 0, 0);
+                        meleeBox.transform.localPosition = new Vector3(2, 0, 0);
                         Debug.Log("rightattack");
                         startA = true;
                     }
                     if (PlayerMove.Globals.playerY == 1)
                     {
-                        meleeBox.transform.localPosition = new Vector3(1, 1, 0);
+                        meleeBox.transform.localPosition = new Vector3(2, 1, 0);
                         Debug.Log("rightattackup");
                         startA = true;
                     }
@@ -86,19 +87,19 @@ public class playerAttack : MonoBehaviour
                 {
                     if (PlayerMove.Globals.playerY == -1)
                     {
-                        meleeBox.transform.localPosition = new Vector3(-1, -1, 0);
+                        meleeBox.transform.localPosition = new Vector3(-2, -1, 0);
                         Debug.Log("LEFTattackDown");
                         startA = true;
                     }
                     if (PlayerMove.Globals.playerY == 0)
                     {
-                        meleeBox.transform.localPosition = new Vector3(-1, 0, 0);
+                        meleeBox.transform.localPosition = new Vector3(-2, 0, 0);
                         Debug.Log("LEFTattack");
                         startA = true;
                     }
                     if (PlayerMove.Globals.playerY == 1)
                     {
-                        meleeBox.transform.localPosition = new Vector3(-1, 1, 0);
+                        meleeBox.transform.localPosition = new Vector3(-2, 1, 0);
                         Debug.Log("LEFTattackup");
                         startA = true;
                     }
