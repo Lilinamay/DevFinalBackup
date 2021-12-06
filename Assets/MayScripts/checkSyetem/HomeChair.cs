@@ -22,6 +22,18 @@ public class HomeChair : MonoBehaviour
     HomeTrans hometrans;
     [SerializeField] GameObject homeMang;
     public Animator BlackAnimator;
+
+    bool Come = false;
+    bool check = false;
+    //GameObject collObject;
+    GameObject newChecker;
+    bool triggerH = false;
+    public bool checkered = false;
+    public GameObject checkObject;
+
+    public bool saveRecord = false;
+    //bool optionshow = false;
+    public bool saved = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,9 +48,22 @@ public class HomeChair : MonoBehaviour
         {
             createOptions(0.3f);   //0.5
             comeHome = false;
+            Come = true;
         }
 
         options();
+
+        if (check)
+        {
+            if (!triggerH)
+            {
+                Invoke("sit", 1);
+                triggerH = true;
+            }
+
+        }
+
+        checkerKey();
     }
 
     private void createOptions(float upDis) { 
@@ -84,6 +109,7 @@ public class HomeChair : MonoBehaviour
                     fluteManager.SetActive(false);
                     option = 0;
                     StartCoroutine(waitForTrans());
+                    Come = false;
 
                 }
                 if (option == 2)
@@ -108,6 +134,7 @@ public class HomeChair : MonoBehaviour
                     PlayerAnimator.SetBool("isFlute", false);
                     PlayerAnimator.SetBool("isSitting", false);
                     PlayerAnimator.SetBool("isStanding", true);
+                    Come = false;
 
                 }
             }
@@ -129,5 +156,64 @@ public class HomeChair : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(1);
         hometrans.goUnder();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Player" && !Come)
+        {
+            Debug.Log("checkpoint");
+            check = true;
+            //collObject = collision.gameObject;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Player")
+        {
+            check = false;
+            triggerH = false;
+            checkered = false;
+            saveRecord = false;
+            saved = false;
+            //if (!duringRes)
+            //{
+                option = 0;
+            //}
+            //GetComponent<playerHealth>().respawnBack = false;
+            if (newChecker != null)
+            {
+                Destroy(newChecker);
+            }
+
+        }
+
+    }
+
+    private void sit()
+    {
+        if (check && !checkered && !Come)
+        {
+            Debug.Log("checked");
+            //Debug.Log(collObject.transform.position);
+            newChecker = Instantiate(checkObject, transform.position, transform.rotation);
+            //newChecker.transform.SetParent(gameObject.transform);
+            newChecker.transform.localPosition = new Vector3(transform.position.x, transform.position.y + 5f); ///local position relative to checkpoint
+            checkered = true;
+        }
+    }
+
+    private void checkerKey()
+    {
+        if (checkered && option == 0)
+        {
+            if (Input.GetKey(KeyCode.Space) && !saved)
+            {
+                saved = true;
+                Destroy(newChecker);
+                createOptions(0.5f);
+            }
+        }
     }
 }

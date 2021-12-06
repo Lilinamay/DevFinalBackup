@@ -12,6 +12,7 @@ public class HomeTrans : MonoBehaviour
     public Vector3 myOriPos;
     HomeChair homeChair;
     public bool comeUnder = false;
+    public GameObject Camera;
 
     // Start is called before the first frame update
     void Start()
@@ -40,9 +41,10 @@ public class HomeTrans : MonoBehaviour
     {
         comeUnder = true;
         player.transform.position = myOriPos;
-        
-        
-        
+        //Camera.transform.position = new Vector3(myOriPos.x, myOriPos.y+4);
+
+
+
     }
 
  

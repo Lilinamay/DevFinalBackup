@@ -2439,6 +2439,7 @@ MonoBehaviour:
   chair: {fileID: 940767313}
   myOriPos: {x: 0, y: 0, z: 0}
   comeUnder: 0
+  Camera: {fileID: 519420028}
 --- !u!4 &591576156
 Transform:
   m_ObjectHideFlags: 0
@@ -4060,6 +4061,7 @@ GameObject:
   - component: {fileID: 940767315}
   - component: {fileID: 940767314}
   - component: {fileID: 940767316}
+  - component: {fileID: 940767317}
   m_Layer: 0
   m_Name: homeChair
   m_TagString: Untagged
@@ -4153,6 +4155,36 @@ MonoBehaviour:
   player: {fileID: 1733815208}
   homeMang: {fileID: 591576154}
   BlackAnimator: {fileID: 1836397573}
+  checkered: 0
+  checkObject: {fileID: 1242970751111882785, guid: b1733a4775525419fb287c182751e3e6, type: 3}
+  saveRecord: 0
+  saved: 0
+--- !u!61 &940767317
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940767313}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00000023841858, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.62, y: 2.38}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.782187, y: 2.38}
+  m_EdgeRadius: 0
 --- !u!1 &951705329
 GameObject:
   m_ObjectHideFlags: 0
@@ -6480,8 +6512,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgrade: 0
   meleeBox: {fileID: 1416054743}
-  holdTime: 0.26
+  holdTime: 0.21
   meleeAnim: {fileID: 1416054748}
+  playerAnim: {fileID: 1733815216}
 --- !u!1 &1742324389
 GameObject:
   m_ObjectHideFlags: 0
