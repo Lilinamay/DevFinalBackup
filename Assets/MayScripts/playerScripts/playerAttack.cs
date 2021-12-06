@@ -18,6 +18,7 @@ public class playerAttack : MonoBehaviour
     SpriteRenderer meleeRenderer;
 
     public Animator meleeAnim;
+    public Animator playerAnim;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,13 +33,15 @@ public class playerAttack : MonoBehaviour
         distanceX = gameObject.transform.position.x - meleeBox.transform.position.x;
         distanceY = gameObject.transform.position.y - meleeBox.transform.position.y;
 
-            if (Input.GetKey(KeyCode.X))
+            if (Input.GetKeyDown(KeyCode.X))
             {
                 if(!meleeBox.activeSelf)
                 {
                     Debug.Log("attackbox");
                     meleeBox.SetActive(true);
                     meleeAnim.SetTrigger("meleeAttack");
+                    playerAnim.SetTrigger("meleeAttack");
+
                     countTime = true;
                     
                 }

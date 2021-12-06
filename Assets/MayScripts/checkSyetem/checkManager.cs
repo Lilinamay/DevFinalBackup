@@ -94,13 +94,12 @@ public class checkManager : MonoBehaviour
 
         if (GetComponent<playerHealth>().respawn == true)
         {
-            GetComponent<PlayerMove>().disableMove = true;
-            GetComponent<playerEnergy>().disableEner = true;
+            
             transform.position = new Vector3(SaveX, SaveY);
             Debug.Log(new Vector3(SaveX, SaveY));                                                               //add anything that need to be reset after respawn
             GetComponent<playerHealth>().playerHealthstat = GetComponent<playerHealth>().myHealth;
             GetComponent<playerHealth>().invinsibleTimer = GetComponent<playerHealth>().invinsibleT;
-            option = 1;
+            
             foreach (GameObject item in itemList)
             {
                 item.SetActive(true);
@@ -111,9 +110,15 @@ public class checkManager : MonoBehaviour
                     item.GetComponent<SpriteRenderer>().color = Color.white;
                 }
             }
-            duringRes = true;
-            mybody.velocity = Vector3.zero;
-            createOptions(0.5f);
+            if (!first)
+            {
+                GetComponent<PlayerMove>().disableMove = true;
+                GetComponent<playerEnergy>().disableEner = true;
+                option = 1;
+                duringRes = true;
+                mybody.velocity = Vector3.zero;
+                createOptions(0.5f);
+            }
             GetComponent<playerHealth>().respawn = false;
         }
 
@@ -158,12 +163,16 @@ public class checkManager : MonoBehaviour
             }
             
         }
+
         if(collision.gameObject.name == "firstCheck")
         {
+            duringRes = false;
             check = false;
             triggerH = false;
             checkered = false;
             saveRecord = false;
+            telBack = false;
+            option = 0;
         }
     }
 

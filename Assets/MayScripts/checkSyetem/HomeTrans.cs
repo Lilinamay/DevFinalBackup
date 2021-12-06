@@ -41,7 +41,7 @@ public class HomeTrans : MonoBehaviour
     {
         comeUnder = true;
         player.transform.position = myOriPos;
-        Camera.transform.position = new Vector3(myOriPos.x, myOriPos.y+4);
+        //Camera.transform.position = new Vector3(myOriPos.x, myOriPos.y+4);
 
 
 

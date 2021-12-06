@@ -6350,6 +6350,7 @@ MonoBehaviour:
   meleeBox: {fileID: 1416054743}
   holdTime: 0.21
   meleeAnim: {fileID: 1416054748}
+  playerAnim: {fileID: 1733815216}
 --- !u!1 &1742324389
 GameObject:
   m_ObjectHideFlags: 0
