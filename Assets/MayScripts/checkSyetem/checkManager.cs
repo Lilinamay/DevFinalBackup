@@ -16,7 +16,7 @@ public class checkManager : MonoBehaviour
     //GameObject[] itemList;
     //GameObject items;
     public List<GameObject> itemList;
-    GameObject collObject;
+    public GameObject collObject;
     GameObject newChecker;
     bool triggerH = false;
     public bool checkered = false;
@@ -37,6 +37,7 @@ public class checkManager : MonoBehaviour
 
     public Animator PlayerAnimator;
     bool duringRes = false;
+    bool telBack = false;
 
     Rigidbody2D mybody;
 
@@ -62,7 +63,7 @@ public class checkManager : MonoBehaviour
     {
         if (check)
         {
-            if (!triggerH)
+            if (!triggerH )
             {
                 Invoke("sit", 1);
                 triggerH = true;
@@ -116,6 +117,7 @@ public class checkManager : MonoBehaviour
 
         if (hometrans.comeUnder)
         {
+            telBack = true;
             createOptions(0f);
             hometrans.comeUnder = false;
             duringRes = true;
@@ -126,7 +128,7 @@ public class checkManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "checkpoint" && !GetComponent<playerHealth>().respawnBack && !duringRes)
+        if (collision.gameObject.tag == "checkpoint" && !GetComponent<playerHealth>().respawnBack && !duringRes && !telBack)
         {
             Debug.Log("checkpoint");
             check = true;
@@ -165,7 +167,7 @@ public class checkManager : MonoBehaviour
 
     private void sit()
     {
-        if (check &&!checkered)
+        if (check &&!checkered && !telBack)
         {
             Debug.Log("checked");
             //Debug.Log(collObject.transform.position);
@@ -250,6 +252,7 @@ public class checkManager : MonoBehaviour
                     fluteManager.SetActive(false);
                     option = 0;
                     StartCoroutine(waitForTrans());
+                    telBack = false;
                 }
                 if (option == 2)
                 {
@@ -265,7 +268,8 @@ public class checkManager : MonoBehaviour
                     GetComponent<playerEnergy>().disableEner = false;
                     duringRes = false;
                     option = 0;
-                    
+
+                    telBack = false;
                     fluteManager.SetActive(false);
                     PlayerMove.Globals.ApplyV = true;
                     mybody.gravityScale = 4.5f;

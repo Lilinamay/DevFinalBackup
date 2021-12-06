@@ -9,7 +9,7 @@ public class HomeTrans : MonoBehaviour
     [SerializeField] Transform homePos;
     [SerializeField] GameObject player;
     [SerializeField] GameObject chair;
-    Vector3 myOriPos;
+    public Vector3 myOriPos;
     HomeChair homeChair;
     public bool comeUnder = false;
 
@@ -27,7 +27,7 @@ public class HomeTrans : MonoBehaviour
 
     public void goHome()
     {
-        myOriPos = player.transform.position;
+        myOriPos = player.GetComponent<checkManager>().collObject.transform.position;
         player.transform.position = homePos.position;
         homeChair.comeHome = true;
         //Object.DontDestroyOnLoad(this.gameObject);
@@ -38,8 +38,9 @@ public class HomeTrans : MonoBehaviour
 
     public void goUnder()
     {
-        player.transform.position = myOriPos;
         comeUnder = true;
+        player.transform.position = myOriPos;
+        
         
         
     }
