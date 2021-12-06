@@ -2275,6 +2275,7 @@ MonoBehaviour:
   chair: {fileID: 940767313}
   myOriPos: {x: 0, y: 0, z: 0}
   comeUnder: 0
+  Camera: {fileID: 519420028}
 --- !u!4 &591576156
 Transform:
   m_ObjectHideFlags: 0
@@ -6347,7 +6348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgrade: 0
   meleeBox: {fileID: 1416054743}
-  holdTime: 0.26
+  holdTime: 0.21
   meleeAnim: {fileID: 1416054748}
 --- !u!1 &1742324389
 GameObject:
