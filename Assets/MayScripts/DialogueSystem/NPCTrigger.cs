@@ -66,7 +66,7 @@ public class NPCTrigger : MonoBehaviour
             Debug.Log("listen");
             GameObject newListener = Instantiate(listenObject, transform.position, transform.rotation);
             newListener.transform.SetParent(gameObject.transform);
-            newListener.transform.localPosition = new Vector3( 0f, 0.9f); ///local position relative to player
+            newListener.transform.localPosition = new Vector3( 0f, 5f); ///local position relative to player
             listened = true;
         }
     }
