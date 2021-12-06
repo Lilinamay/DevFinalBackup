@@ -5,6 +5,7 @@ using Pathfinding;
 
 public class smartAI : MonoBehaviour
 {
+    public AIPath aiPath;
     private AIDestinationSetter aiDest;
     [SerializeField] GameObject[] points;
     //[SerializeField] GameObject bound;
@@ -36,13 +37,25 @@ public class smartAI : MonoBehaviour
         {
             //aiDest.enabled = false;
             randomPos();
+        }
 
+        //if(aiDest.target = null)
+        //{
+        //    aiDest.target = points[0].transform;
+        //}
 
+        if(aiPath.desiredVelocity.x>= 0.01f)
+        {
+            transform.localScale = new Vector3(-1f, 1f, 1f);
+        } else if(aiPath.desiredVelocity.x <= 0.01f)
+        {
+            transform.localScale = new Vector3(1f, 1f, 1f);
         }
     }
 
     void randomPos()
     {
+        
         
         Timer += Time.deltaTime;
         if (Timer >= 3)

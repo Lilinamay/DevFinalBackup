@@ -8,17 +8,19 @@ public class playerAttack : MonoBehaviour
     public GameObject meleeBox;
     //GameObject newMelee;
     Rigidbody2D myBody;
-    float timer = 0;
+    public float timer = 0;
     public float holdTime;
     bool countTime = false;
     float distanceX;
     float distanceY;
     bool startA;
-    float chargeTimer = 0;
+    //float chargeTimer = 0;
     SpriteRenderer meleeRenderer;
 
     public Animator meleeAnim;
     public Animator playerAnim;
+
+    public float rotation;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +37,7 @@ public class playerAttack : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.X))
             {
-                if(!meleeBox.activeSelf)
+                if(!meleeBox.activeSelf && timer == 0)
                 {
                     Debug.Log("attackbox");
                     meleeBox.SetActive(true);
@@ -57,7 +59,7 @@ public class playerAttack : MonoBehaviour
 
         meleeBoxBehav();
 
-            if (countTime)
+        if (countTime)
         {
             timer += Time.deltaTime;
         }
@@ -75,18 +77,21 @@ public class playerAttack : MonoBehaviour
                     if (PlayerMove.Globals.playerY == -1)
                     {
                         meleeBox.transform.localPosition = new Vector3(2, -1, 0);
+                        meleeBox.transform.rotation = Quaternion.Euler(0, 0, -rotation);
                         Debug.Log("rightattackDown");
                         startA = true;
                     }
                     if (PlayerMove.Globals.playerY == 0)
                     {
                         meleeBox.transform.localPosition = new Vector3(2, 0, 0);
+                        meleeBox.transform.rotation = Quaternion.Euler(0, 0, 0);
                         Debug.Log("rightattack");
                         startA = true;
                     }
                     if (PlayerMove.Globals.playerY == 1)
                     {
                         meleeBox.transform.localPosition = new Vector3(2, 1, 0);
+                        meleeBox.transform.rotation = Quaternion.Euler(0, 0, rotation);
                         Debug.Log("rightattackup");
                         startA = true;
                     }
@@ -97,18 +102,21 @@ public class playerAttack : MonoBehaviour
                     if (PlayerMove.Globals.playerY == -1)
                     {
                         meleeBox.transform.localPosition = new Vector3(-2, -1, 0);
+                        meleeBox.transform.rotation = Quaternion.Euler(0, 0, rotation);
                         Debug.Log("LEFTattackDown");
                         startA = true;
                     }
                     if (PlayerMove.Globals.playerY == 0)
                     {
                         meleeBox.transform.localPosition = new Vector3(-2, 0, 0);
+                        meleeBox.transform.rotation = Quaternion.Euler(0, 0, 0);
                         Debug.Log("LEFTattack");
                         startA = true;
                     }
                     if (PlayerMove.Globals.playerY == 1)
                     {
                         meleeBox.transform.localPosition = new Vector3(-2, 1, 0);
+                        meleeBox.transform.rotation = Quaternion.Euler(0, 0, -rotation);
                         Debug.Log("LEFTattackup");
                         startA = true;
                     }
@@ -119,6 +127,7 @@ public class playerAttack : MonoBehaviour
         if (!meleeBox.activeSelf)
         {
             meleeBox.transform.position = gameObject.transform.position;
+            meleeBox.transform.rotation = new Quaternion(0, 0, 0, 0);
             startA = false;
             //Debug.Log("noattack");
         }

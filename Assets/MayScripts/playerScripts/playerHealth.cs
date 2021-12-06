@@ -104,6 +104,7 @@ public class playerHealth : MonoBehaviour
         }
     }
 
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "enemy")

@@ -7,12 +7,16 @@ public class riverBehavior : MonoBehaviour
     public Transform sendBack;
     int playerHealth;
     [SerializeField] GameObject player;
+    public GameObject freezeScreen;
+    SpriteRenderer playerRenderer;
+    bool respawnBack;
 
     // Start is called before the first frame update
     void Start()
     {
         playerHealth = player.GetComponent<playerHealth>().playerHealthstat;
-        
+        playerRenderer = player.GetComponent<SpriteRenderer>();
+        respawnBack = player.GetComponent<playerHealth>().respawnBack;
     }
 
     // Update is called once per frame
@@ -26,9 +30,24 @@ public class riverBehavior : MonoBehaviour
         if(collision.name == "Player")
         {
             //playerHealth--;
-            player.GetComponent<playerHealth>().playerHealthstat--;
-            collision.gameObject.transform.position = sendBack.position;
             
+            
+            playerRenderer.color = Color.red;
+            StartCoroutine(changeColor());
+            freezeScreen.GetComponent<freezeScreen>().stop();
+
         }
+    }
+
+    IEnumerator changeColor()
+    {
+        yield return new WaitForSecondsRealtime(0.5f);
+        playerRenderer.color = Color.white;
+        if (playerHealth >1 )
+        {
+            player.transform.position = sendBack.position;
+        }
+        player.GetComponent<playerHealth>().playerHealthstat--;
+
     }
 }
