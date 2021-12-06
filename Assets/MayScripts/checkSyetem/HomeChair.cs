@@ -21,6 +21,7 @@ public class HomeChair : MonoBehaviour
 
     HomeTrans hometrans;
     [SerializeField] GameObject homeMang;
+    public Animator BlackAnimator;
     // Start is called before the first frame update
     void Start()
     {
@@ -78,6 +79,7 @@ public class HomeChair : MonoBehaviour
             {
                 if (option == 1)
                 {
+                    BlackAnimator.SetTrigger("isBlackOut");
                     Debug.Log("go under, change scene");
                     fluteManager.SetActive(false);
                     

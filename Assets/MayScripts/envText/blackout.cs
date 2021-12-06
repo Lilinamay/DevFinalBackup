@@ -34,6 +34,8 @@ public class blackout : MonoBehaviour
         //Debug.Log(timer);
     }
 
+
+
     void fadeInText(Image image, float fadeSpeed)
     {
         Debug.Log("put in text fade");
@@ -82,6 +84,7 @@ public class blackout : MonoBehaviour
         }
 
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Player")

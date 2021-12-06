@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class checkManager : MonoBehaviour
 {
+    public Animator BlackAnimator;
+
     public float SaveX;
     public float SaveY;
     //int SaveSparkle;
@@ -241,6 +245,7 @@ public class checkManager : MonoBehaviour
             {
                 if(option == 1)
                 {
+                    BlackAnimator.SetTrigger("isBlackOut");
                     Debug.Log("go home, change scene");
                     fluteManager.SetActive(false);
                     option = 0;
