@@ -26,7 +26,7 @@ public class checkManager : MonoBehaviour
     //bool optionshow = false;
     public bool saved = false;
 
-    bool first = true;
+    public bool first = true;
 
     public int option = 0;
     GameObject newOptions;

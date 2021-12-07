@@ -18,7 +18,7 @@ public class HomeChair : MonoBehaviour
     [SerializeField] GameObject player;
     //[SerializeField] GameObject chair;
     Rigidbody2D playerBody;
-
+    checkManager checkmanager;
     HomeTrans hometrans;
     [SerializeField] GameObject homeMang;
     public Animator BlackAnimator;
@@ -39,6 +39,7 @@ public class HomeChair : MonoBehaviour
     {
         playerBody = player.GetComponent<Rigidbody2D>();
         hometrans = homeMang.GetComponent<HomeTrans>();
+        checkmanager = player.GetComponent<checkManager>();
     }
 
     // Update is called once per frame
@@ -107,9 +108,13 @@ public class HomeChair : MonoBehaviour
                     BlackAnimator.SetTrigger("isBlackOut");
                     Debug.Log("go under, change scene");
                     fluteManager.SetActive(false);
-                    option = 0;
-                    StartCoroutine(waitForTrans());
-                    Come = false;
+                    if (!checkmanager.first)
+                    {
+                        option = 0;
+                        StartCoroutine(waitForTrans());
+                        Come = false;
+                    }
+
 
                 }
                 if (option == 2)
