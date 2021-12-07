@@ -20,6 +20,7 @@ public class playerAttack : MonoBehaviour
 
     public Animator meleeAnim;
     public Animator playerAnim;
+    public AudioSource playerAudio;
 
     public float rotation;
     // Start is called before the first frame update
@@ -45,7 +46,7 @@ public class playerAttack : MonoBehaviour
                     meleeBox.SetActive(true);
                     meleeAnim.SetTrigger("meleeAttack");
                     playerAnim.SetTrigger("meleeAttack");
-
+                playerAudio.Play();
                     countTime = true;
                     
                 }
