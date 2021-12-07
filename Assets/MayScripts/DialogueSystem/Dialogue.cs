@@ -20,6 +20,7 @@ public class Dialogue : MonoBehaviour
     private bool triggered = false;
     private bool first = false;
     public bool dialogue2Complete = false;
+    public bool diaDone = false;
     [SerializeField] GameObject player;
 
   
@@ -114,6 +115,10 @@ public class Dialogue : MonoBehaviour
         triggered = false;
         GetComponent<NPCTrigger>().listened = false;
         GetComponent<NPCTrigger>().convTriggered = false;
+        if (!diaDone)
+        {
+            diaDone = true;
+        }
 
     }
 
