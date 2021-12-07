@@ -26,6 +26,7 @@ public class Adialogue : MonoBehaviour
     [SerializeField] Queue<string> names; //a list of strings
     //[SerializeField] Queue<Sprite> avatars;
     //[SerializeField] Queue<Sprite> textboxs;
+    public Image endCG;
 
     //GameObject player;
 
@@ -37,6 +38,7 @@ public class Adialogue : MonoBehaviour
 
         //avatarSprite.enabled = false;
         textboxSprite.enabled = false; //disable without dialogue
+        endCG.enabled = false;
     }
 
     private void triggerConversation()
@@ -108,7 +110,10 @@ public class Adialogue : MonoBehaviour
         triggered = false;
         GetComponent<NPCTrigger>().listened = false;
         GetComponent<NPCTrigger>().convTriggered = false;
-
+        if(plotNumber.Globals.plotNum == 1)
+        {
+            endCG.enabled = true;
+        }
     }
 
 

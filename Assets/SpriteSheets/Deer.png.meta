@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 1f652325fc21b452c9a60eb2d6c5764c
+guid: 774d5b8715a0644c4a68c7c3cff3d8bd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5058555679708485475
-    second: EnemyDBullet_0
+      213: -2449844058664256442
+    second: Deer_0
+  - first:
+      213: 4258134486586635976
+    second: Deer_1
+  - first:
+      213: 6634901112032187219
+    second: Deer_2
+  - first:
+      213: -258956355012025457
+    second: Deer_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,13 +115,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EnemyDBullet_0
+      name: Deer_0
       rect:
         serializedVersion: 2
-        x: 1263
-        y: 489
-        width: 59
-        height: 58
+        x: 540
+        y: 678
+        width: 128
+        height: 266
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,8 +129,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d98e07229666cc9b0800000000000000
-      internalID: -5058555679708485475
+      spriteID: 64c3738fec7600ed0800000000000000
+      internalID: -2449844058664256442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deer_1
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 567
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c636d641cee71b30800000000000000
+      internalID: 4258134486586635976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deer_2
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 567
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 353d58e7867e31c50800000000000000
+      internalID: 6634901112032187219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deer_3
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 143
+        width: 119
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f83ad2f2190086cf0800000000000000
+      internalID: -258956355012025457
       vertices: []
       indices: 
       edges: []
