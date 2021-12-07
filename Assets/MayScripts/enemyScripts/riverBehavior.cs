@@ -10,6 +10,7 @@ public class riverBehavior : MonoBehaviour
     public GameObject freezeScreen;
     SpriteRenderer playerRenderer;
     bool respawnBack;
+    Rigidbody2D mybody;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,7 @@ public class riverBehavior : MonoBehaviour
         playerHealth = player.GetComponent<playerHealth>().playerHealthstat;
         playerRenderer = player.GetComponent<SpriteRenderer>();
         respawnBack = player.GetComponent<playerHealth>().respawnBack;
+        mybody = player.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -48,6 +50,7 @@ public class riverBehavior : MonoBehaviour
             player.transform.position = sendBack.position;
         }
         player.GetComponent<playerHealth>().playerHealthstat--;
+        mybody.velocity = Vector3.zero;
 
     }
 }

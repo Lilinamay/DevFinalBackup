@@ -17,6 +17,7 @@ public class CameraMove : MonoBehaviour
 
     Vector3 smoothPos;
     public float smoothRate;
+    public GameObject Player;
 
 
     // Start is called before the first frame update
@@ -57,6 +58,10 @@ public class CameraMove : MonoBehaviour
             if (PlayerMove.Globals.jumpDistance > 4f)
             {
                 camY = Mathf.Clamp(PlayerMove.Globals.CamFloorY + PlayerMove.Globals.jumpDistance, yMin + camSize, yMax - camSize);
+            }
+            else if (PlayerMove.Globals.jumpDistance < 0f)
+            {
+                camY = Mathf.Clamp(Player.transform.position.y, yMin + camSize, yMax - camSize);
             }
             else
             {
