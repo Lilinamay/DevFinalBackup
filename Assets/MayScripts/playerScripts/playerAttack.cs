@@ -129,7 +129,7 @@ public class playerAttack : MonoBehaviour
         if (!meleeBox.activeSelf)
         {
             meleeBox.transform.position = gameObject.transform.position;
-            meleeBox.transform.rotation = new Quaternion(0, 0, 0, 0);
+            meleeBox.transform.rotation = Quaternion.Euler(0, 0, 0);
             startA = false;
             //Debug.Log("noattack");
         }
