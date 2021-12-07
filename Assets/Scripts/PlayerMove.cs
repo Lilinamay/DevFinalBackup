@@ -129,7 +129,7 @@ public class PlayerMove : MonoBehaviour
         }
         if (!onFloor)
         {
-            speed = 11f;
+            speed = 10f;
         }
         else
         {
