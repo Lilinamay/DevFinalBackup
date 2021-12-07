@@ -134,7 +134,7 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            speed = 12;
+            
             PlayerAnimator.SetBool("isJumpUp", false);
             PlayerAnimator.SetBool("isJumpDown", false);
         }
