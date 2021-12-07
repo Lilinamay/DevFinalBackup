@@ -35,6 +35,7 @@ public class riverBehavior : MonoBehaviour
             
             
             playerRenderer.color = Color.red;
+            mybody.velocity = Vector3.zero;
             StartCoroutine(changeColor());
             freezeScreen.GetComponent<freezeScreen>().stop();
 

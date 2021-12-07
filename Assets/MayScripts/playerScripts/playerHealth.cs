@@ -23,6 +23,7 @@ public class playerHealth : MonoBehaviour
     public GameObject freezeScreen;
 
     SpriteRenderer myRenderer;
+    Rigidbody2D mybody;
     
 
     // Start is called before the first frame update
@@ -30,6 +31,7 @@ public class playerHealth : MonoBehaviour
     {
         myHealth = playerHealthstat;
         myRenderer = GetComponent<SpriteRenderer>();
+        mybody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -42,6 +44,7 @@ public class playerHealth : MonoBehaviour
             respawn = true;
             respawned = true;
             respawnBack = true;
+            mybody.velocity = Vector3.zero;
         }
 
 
