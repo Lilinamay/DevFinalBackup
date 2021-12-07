@@ -41,6 +41,7 @@ public class HomeTrans : MonoBehaviour
     {
         comeUnder = true;
         player.transform.position = myOriPos;
+        PlayerMove.Globals.CamFloorY = player.transform.position.y - 0.5f;
         //Camera.transform.position = new Vector3(myOriPos.x, myOriPos.y+4);
 
 
