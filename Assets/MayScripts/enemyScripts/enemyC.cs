@@ -12,7 +12,7 @@ public class enemyC : MonoBehaviour
     Rigidbody2D enemyBody;
     SpriteRenderer myRenderer;
 
-    //public Animator EnemyBAnimator;
+    public Animator EnemyCAnimator;
 
     public float RayDis = 10f;
     public bool alert = false;
@@ -90,6 +90,9 @@ public class enemyC : MonoBehaviour
                     //chargeCD = 1;
                     enemyBody.velocity = new Vector2(0, 0);
                     Debug.Log("CHARGE");
+                    EnemyCAnimator.SetBool("charge", true);
+                    EnemyCAnimator.SetBool("Walk", false);
+                    EnemyCAnimator.SetBool("done", false);
                     //EnemyBAnimator.SetBool("canCharge", true);
                 }
             }
@@ -97,12 +100,18 @@ public class enemyC : MonoBehaviour
             {
                 //walk
                 enemyBody.velocity = new Vector2(enemySpeed, 0);
+                EnemyCAnimator.SetBool("charge", false);
+                EnemyCAnimator.SetBool("Walk", true);
+                EnemyCAnimator.SetBool("done", false);
             }
         }
         else
         {
             //walk
             enemyBody.velocity = new Vector2(enemySpeed, 0);
+            EnemyCAnimator.SetBool("charge", false);
+            EnemyCAnimator.SetBool("Walk", true);
+            EnemyCAnimator.SetBool("done", false);
         }
 
         if (dashCD <= 4 && dashCD >= 3)
@@ -131,6 +140,9 @@ public class enemyC : MonoBehaviour
                 hasShoot = true;
             }
             enemyBody.velocity = new Vector2(0, 0);
+            EnemyCAnimator.SetBool("charge", false);
+            EnemyCAnimator.SetBool("Walk", false);
+            EnemyCAnimator.SetBool("done", true);
 
         }
         //else if (dashCD < 2 && dashCD >= 1)
@@ -143,6 +155,9 @@ public class enemyC : MonoBehaviour
             //enemyBody.velocity = new Vector3(enemySpeed, enemyBody.velocity.y);
             enemyBody.velocity = new Vector2(enemySpeed, 0);
             //EnemyBAnimator.SetBool("canAttack", false);
+            EnemyCAnimator.SetBool("charge", false);
+            EnemyCAnimator.SetBool("Walk", true);
+            EnemyCAnimator.SetBool("done", false);
             hasShoot = false;
         }
 
