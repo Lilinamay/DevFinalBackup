@@ -1760,7 +1760,7 @@ GameObject:
   - component: {fileID: 448052163}
   - component: {fileID: 448052164}
   m_Layer: 6
-  m_Name: enemyA
+  m_Name: enemyE
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1920,7 +1920,7 @@ Animator:
   m_GameObject: {fileID: 448052157}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5560ae2c34aeb415ba068971594f97b5, type: 2}
+  m_Controller: {fileID: 9100000, guid: 13a666365337549d29c749731898e19a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2569,7 +2569,7 @@ GameObject:
   m_Component:
   - component: {fileID: 598264777}
   m_Layer: 0
-  m_Name: enemyA
+  m_Name: enemyE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3529,10 +3529,20 @@ MonoBehaviour:
     - Typhoria
     - Minoliy
     - Minoliy
+    - Typhoria
+    - Typhoria
+    - Minoliy
+    - Minoliy
     sentences:
     - I am back. You don't look so good
     - I am alright, just need some moment to recover
     - more people are getting sick
+    - 'In the underground, I saw... nm...
+
+'
+    - 'What if I am not what you think I am? '
+    - 'You are always who you are, Phora. A shining and unique star. '
+    - "Don\u2019t let anyone define you. You weave your own faith. "
   - names:
     - Typhoria
     - Minoliy
