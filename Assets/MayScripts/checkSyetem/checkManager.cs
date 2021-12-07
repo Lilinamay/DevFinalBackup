@@ -86,7 +86,9 @@ public class checkManager : MonoBehaviour
             Debug.Log("progress saved");
             //check = false;
             itemList.Clear();
-            saveRecord = true;
+                GetComponent<playerEnergy>().energy = 1;
+                GetComponent<playerHealth>().playerHealthstat = GetComponent<playerHealth>().myHealth;
+                saveRecord = true;
             //saved = false;
             }
         }
@@ -97,6 +99,7 @@ public class checkManager : MonoBehaviour
             
             transform.position = new Vector3(SaveX, SaveY);
             Debug.Log(new Vector3(SaveX, SaveY));                                                               //add anything that need to be reset after respawn
+            GetComponent<playerEnergy>().energy = 1;
             GetComponent<playerHealth>().playerHealthstat = GetComponent<playerHealth>().myHealth;
             GetComponent<playerHealth>().invinsibleTimer = GetComponent<playerHealth>().invinsibleT;
             
