@@ -2501,6 +2501,7 @@ GameObject:
   - component: {fileID: 606514121}
   - component: {fileID: 606514122}
   - component: {fileID: 606514123}
+  - component: {fileID: 606514124}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -2612,7 +2613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listened: 0
-  listenObject: {fileID: 5006401023474622672, guid: 47bcffc78863a469bb6c1a4641b9fa33, type: 3}
+  listenObject: {fileID: 9152258176134499417, guid: b78adc6a533ae4274927f263e0f153da, type: 3}
   convTriggered: 0
   player: {fileID: 1733815208}
 --- !u!114 &606514123
@@ -2643,7 +2644,22 @@ MonoBehaviour:
   dialogueText: {fileID: 1027640347}
   textboxSprite: {fileID: 1389103065}
   dialogue2Complete: 0
+  diaDone: 0
   player: {fileID: 1733815208}
+--- !u!114 &606514124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606514118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6887289c325e47f0abae7238bf71341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newPlot: 1
+  plotmanager: {fileID: 351803616}
 --- !u!1 &616075110
 GameObject:
   m_ObjectHideFlags: 0
@@ -3328,10 +3344,21 @@ MonoBehaviour:
     - Typhoria
     - Typhoria
     - Typhoria
+    - Pristress
+    - Typhoria
+    - Pristress
     sentences:
-    - I just found something in the book.
-    - the flower of light
-    - maybe it can save your life and the people's life
+    - My lady, I   found something in this old book from the library.
+    - the Flower of Light
+    - maybe it is a way to cure you,  and everyone else.
+    - Underground is a dangerous place, Phora. I appreciate your heart for helping
+      though.
+    - "But the conditions are getting worse and worse. More and more people are getting
+      sick. Even if you are getting sick from blessings. What am I\u2026 are we going
+      to do without you?"
+    - "...You may leave but don\u2019t wander too far there. And, you know, I will
+      always be here for you when you need help. May the light bless you wherever
+      you go. "
   - names:
     - Typhoria
     - Minoliy
@@ -3369,7 +3396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listened: 0
-  listenObject: {fileID: 5006401023474622672, guid: 47bcffc78863a469bb6c1a4641b9fa33, type: 3}
+  listenObject: {fileID: 9152258176134499417, guid: b78adc6a533ae4274927f263e0f153da, type: 3}
   convTriggered: 0
   player: {fileID: 1733815208}
 --- !u!61 &829824912
@@ -7520,6 +7547,7 @@ MonoBehaviour:
   dialogueText: {fileID: 1027640347}
   textboxSprite: {fileID: 1389103065}
   dialogue2Complete: 0
+  diaDone: 0
   player: {fileID: 1733815208}
 --- !u!114 &2084192884
 MonoBehaviour:
@@ -7534,7 +7562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listened: 0
-  listenObject: {fileID: 5006401023474622672, guid: 47bcffc78863a469bb6c1a4641b9fa33, type: 3}
+  listenObject: {fileID: 9152258176134499417, guid: b78adc6a533ae4274927f263e0f153da, type: 3}
   convTriggered: 0
   player: {fileID: 1733815208}
 --- !u!61 &2084192885
