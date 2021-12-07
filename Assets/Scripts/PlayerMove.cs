@@ -19,6 +19,7 @@ public class PlayerMove : MonoBehaviour
     
     bool isDashing;
     bool hasJumpedOnce;
+    bool checkOnFloor;
 
     
     
@@ -138,6 +139,11 @@ public class PlayerMove : MonoBehaviour
             PlayerAnimator.SetBool("isJumpDown", false);
         }
 
+        if (checkOnFloor)
+        {
+            ConstantCheckOnFloor();
+        }
+
         /*if (jumpTimer > 0)
         {
             jumpTimer -= Time.deltaTime;            //reset jumpTimer
@@ -182,8 +188,31 @@ public class PlayerMove : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyUp(KeyCode.RightArrow) && !isDashing)
+        {
+            if (onFloor)
+            {
+                myBody.velocity = new Vector3(0, myBody.velocity.y);
+            }
+            else
+            {
+                checkOnFloor = true;
+            }
+            
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftArrow) && !isDashing)
+        {
+            if (onFloor)
+            {
+                myBody.velocity = new Vector3(0, myBody.velocity.y);
+            }
+            else
+            {
+                checkOnFloor = true;
+            }
+        }
 
-        if (Input.GetKey(KeyCode.Z) && onFloor && jumpKeyReleased && !isDashing)   //jump conditions
+            if (Input.GetKey(KeyCode.Z) && onFloor && jumpKeyReleased && !isDashing)   //jump conditions
         {
             myBody.velocity = new Vector3(myBody.velocity.x, jumpHeight);
 
@@ -287,9 +316,19 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    void ConstantCheckOnFloor()
+    {
+        if (onFloor)
+        {
+            myBody.velocity = new Vector3(0, myBody.velocity.y);
+            checkOnFloor = false;
+        }
+    }
+
 
     private void FixedUpdate()
     {
+        Debug.Log(onFloor);
 
         RaycastHit2D hit = Physics2D.Raycast(rayCastOrigin.position, Vector2.down, rayDis,layerMask);
         if (hit.collider)
@@ -299,6 +338,7 @@ public class PlayerMove : MonoBehaviour
             {
                 //Debug.Log("floor below, can jump");
                 onFloor = true;
+
                 canDash = true;
                 onPlatform = false;
                 Globals.CamOnfloor = true;
