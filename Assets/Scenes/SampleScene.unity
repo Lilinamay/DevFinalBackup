@@ -2131,9 +2131,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46b3331d76e844cc0949e67d21df1fa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 0.5
-  magnitude: 0.08
-  smoothR: 0.5
+  duration: 0.12
+  magnitude: 0.7
+  smoothR: 0.8
   playerRenderer: {fileID: 1733815212}
 --- !u!1 &532655925
 GameObject:
@@ -2216,7 +2216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c056496c17b754f858d2032d9e0ef52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 0.5
+  duration: 0.12
 --- !u!1 &570820763
 GameObject:
   m_ObjectHideFlags: 0

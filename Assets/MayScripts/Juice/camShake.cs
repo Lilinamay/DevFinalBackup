@@ -28,7 +28,7 @@ public class camShake : MonoBehaviour
             transform.localPosition =
                 Vector3.Lerp(                                           //smooth transition
                     transform.localPosition,
-                    new Vector3(x, y, transform.localPosition.z),
+                    new Vector3(transform.localPosition.x + x, transform.localPosition.y + y, transform.localPosition.z),
                     smoothR
                     );
             //
