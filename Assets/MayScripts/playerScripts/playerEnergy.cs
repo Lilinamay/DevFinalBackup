@@ -16,6 +16,7 @@ public class playerEnergy : MonoBehaviour
     public GameObject bullet;
     public float shootSpeed;
     float shotCD = 0;
+    public Animator playerAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +50,7 @@ public class playerEnergy : MonoBehaviour
             {
                 Debug.Log("charged Shot");
                 energy -= enToCharge;
+                playerAnimator.SetTrigger("rangeAttack");
                 GameObject newBall = Instantiate(bullet, transform.position, transform.rotation); //default to player's position/rotation
                 newBall.transform.SetParent(gameObject.transform);
                 newBall.GetComponent<bulletBehavior>().OriginPos = gameObject.transform.position;

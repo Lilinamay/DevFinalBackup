@@ -11,13 +11,14 @@ public class enemyBehavior : MonoBehaviour
     public float rangedTimer = 0;
     SpriteRenderer myRenderer;
     public GameObject player;
+    playerEnergy pEnergy;
 
     // Start is called before the first frame update
     void Start()
     {
         myHealth = enemyHealth;
         myRenderer = GetComponent<SpriteRenderer>();
-        
+        pEnergy = player.GetComponent<playerEnergy>();
     }
 
     // Update is called once per frame
@@ -60,6 +61,10 @@ public class enemyBehavior : MonoBehaviour
             {
                 enemyHealth--;
                 attackedTimer = 0.3F;
+                if (pEnergy.energy < 1)
+                {
+                    pEnergy.energy += 0.1f;
+                }
                 if (player.GetComponent<PlayerMove>().faceR)
                 {
                     player.transform.position = new Vector3(transform.position.x - 0.1f, transform.position.y);
@@ -83,6 +88,8 @@ public class enemyBehavior : MonoBehaviour
             {
                 Debug.Log("range attacked");
                 enemyHealth--;
+                myRenderer.color = Color.red;
+                StartCoroutine(changeColor());
                 rangedTimer = 0.5f;
             }
         }

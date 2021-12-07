@@ -16,6 +16,7 @@ public class playerAttack : MonoBehaviour
     bool startA;
     //float chargeTimer = 0;
     SpriteRenderer meleeRenderer;
+    playerEnergy playeren;
 
     public Animator meleeAnim;
     public Animator playerAnim;
@@ -27,6 +28,7 @@ public class playerAttack : MonoBehaviour
         myBody = gameObject.GetComponent<Rigidbody2D>();
         meleeBox.SetActive(false);
         meleeRenderer = meleeBox.GetComponent<SpriteRenderer>();
+        
     }
 
     // Update is called once per frame
