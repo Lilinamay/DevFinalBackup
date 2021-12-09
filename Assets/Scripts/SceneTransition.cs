@@ -10,7 +10,7 @@ public class SceneTransition : MonoBehaviour
     Rigidbody2D mybody;
     public GameObject originalBound;
     public GameObject WorldBound;
-
+    public Animator BlackAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,7 @@ public class SceneTransition : MonoBehaviour
     {
         if (collision.name == "Player")
         {
-
+            BlackAnimator.SetTrigger("isBlackOut");
             StartCoroutine(transport());
 
 

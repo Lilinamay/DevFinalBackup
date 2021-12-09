@@ -39689,6 +39689,7 @@ MonoBehaviour:
   player: {fileID: 1666076227}
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 818821652}
+  BlackAnimator: {fileID: 794808289}
 --- !u!61 &646402118
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -60533,6 +60534,7 @@ MonoBehaviour:
   player: {fileID: 1666076227}
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 1741635864}
+  BlackAnimator: {fileID: 794808289}
 --- !u!61 &969768340
 BoxCollider2D:
   m_ObjectHideFlags: 0
