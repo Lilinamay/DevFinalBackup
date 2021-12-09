@@ -309,13 +309,14 @@ public class PlayerMove : MonoBehaviour
     void HandleConvMove()               //move player to the right during conversation
     {
         myPosX = transform.position.x;
-        if ((myPosX- npcPosX) < 1f)
+        if ((myPosX- npcPosX) < 2.3f)
         {
             HandleLRMovement(speed);
             myRenderer.flipX = false;
-        }if((myPosX - npcPosX) > 1f)
+        }if((myPosX - npcPosX) > 2.3f)
         {
             myRenderer.flipX = true;
+            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         }
     }
 

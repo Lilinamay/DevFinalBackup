@@ -32,6 +32,7 @@ public class NPCTrigger : MonoBehaviour
                 convTriggered = true;
                 Debug.Log("convTriggered");
                 player.GetComponent<PlayerMove>().disableMove = true;
+                player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
                 player.GetComponent<PlayerMove>().convMove = true;
                 player.GetComponent<PlayerMove>().npcPosX  = transform.position.x;
             }
