@@ -99,6 +99,8 @@ public class checkManager : MonoBehaviour
 
 
             transform.position = new Vector3(SaveX, SaveY);
+            PlayerMove.Globals.CamOnfloor = true;
+            PlayerMove.Globals.CamFloorY = SaveY;
             Debug.Log(new Vector3(SaveX, SaveY));                                                               //add anything that need to be reset after respawn
             GetComponent<playerEnergy>().energy = 1;
             GetComponent<playerHealth>().playerHealthstat = GetComponent<playerHealth>().myHealth;
@@ -255,7 +257,7 @@ public class checkManager : MonoBehaviour
             newOptionsUI = Instantiate(optionObjectUI, collObject.transform.position, collObject.transform.rotation);
             newOptionsUI.transform.localPosition = new Vector3(collObject.transform.position.x, collObject.transform.position.y + 7.72f); ///local position relative to checkpoint
             PlayerMove.Globals.ApplyV = false;
-            PlayerMove.Globals.CamOnfloor = true;
+            
             transform.position = new Vector3(transform.position.x, transform.position.y + upDis);
             //mybody.constraints = RigidbodyConstraints2D.FreezePositionY;
 

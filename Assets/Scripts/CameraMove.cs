@@ -59,7 +59,7 @@ public class CameraMove : MonoBehaviour
             {
                 camY = Mathf.Clamp(PlayerMove.Globals.CamFloorY + PlayerMove.Globals.jumpDistance, yMin + camSize, yMax - camSize);
             }
-            else if (PlayerMove.Globals.jumpDistance < -2f)
+            else if (PlayerMove.Globals.jumpDistance < -1f)
             {
                 camY = Mathf.Clamp(Player.transform.position.y, yMin + camSize, yMax - camSize);
             }
