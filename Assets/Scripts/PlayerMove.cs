@@ -280,6 +280,9 @@ public class PlayerMove : MonoBehaviour
         if (myBody.velocity.y < 0 && Globals.ApplyV)
         {
             myBody.velocity += Vector2.up * Physics2D.gravity.y * (gravityMultiplier - 1f) * Time.deltaTime;
+            PlayerAnimator.SetBool("isStanding", false);
+            PlayerAnimator.SetBool("isWalking", false);
+            PlayerAnimator.SetBool("isJumpDown", true);
         }
     }
 
