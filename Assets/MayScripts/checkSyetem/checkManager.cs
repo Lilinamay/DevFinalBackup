@@ -96,7 +96,8 @@ public class checkManager : MonoBehaviour
 
         if (GetComponent<playerHealth>().respawn == true)
         {
-            
+
+
             transform.position = new Vector3(SaveX, SaveY);
             Debug.Log(new Vector3(SaveX, SaveY));                                                               //add anything that need to be reset after respawn
             GetComponent<playerEnergy>().energy = 1;
@@ -115,12 +116,25 @@ public class checkManager : MonoBehaviour
             }
             if (!first)
             {
+                PlayerAnimator.SetBool("isSitting", true);
+                PlayerAnimator.SetBool("isStanding", false);
+                PlayerAnimator.SetBool("isWalking", false);
+                PlayerAnimator.SetBool("isJumpDown", false);
+                PlayerAnimator.SetBool("isJumpUp", false);
                 GetComponent<PlayerMove>().disableMove = true;
                 GetComponent<playerEnergy>().disableEner = true;
                 option = 1;
                 duringRes = true;
                 mybody.velocity = Vector3.zero;
                 createOptions(0.5f);
+            }
+            if (first)
+            {
+                PlayerAnimator.SetBool("isSitting", false);
+                PlayerAnimator.SetBool("isStanding", false);
+                PlayerAnimator.SetBool("isWalking", true);
+                PlayerAnimator.SetBool("isJumpDown", false);
+                PlayerAnimator.SetBool("isJumpUp", false);
             }
             GetComponent<playerHealth>().respawn = false;
         }
@@ -130,6 +144,11 @@ public class checkManager : MonoBehaviour
             telBack = true;
             createOptions(0f);
             hometrans.comeUnder = false;
+            PlayerAnimator.SetBool("isSitting", true);
+            PlayerAnimator.SetBool("isStanding", false);
+            PlayerAnimator.SetBool("isWalking", false);
+            PlayerAnimator.SetBool("isJumpDown", false);
+            PlayerAnimator.SetBool("isJumpUp", false);
             //duringRes = true;
         }
 
@@ -223,6 +242,9 @@ public class checkManager : MonoBehaviour
             PlayerAnimator.SetBool("isSitting", true);
             PlayerAnimator.SetBool("isStanding", false);
             PlayerAnimator.SetBool("isWalking", false);
+            PlayerAnimator.SetBool("isSitting", true);
+            PlayerAnimator.SetBool("isJumpDown", false);
+            PlayerAnimator.SetBool("isJumpUp", false);
             GetComponent<PlayerMove>().disableMove = true;
             GetComponent<playerEnergy>().disableEner = true;
             //player sit
@@ -233,8 +255,10 @@ public class checkManager : MonoBehaviour
             newOptionsUI = Instantiate(optionObjectUI, collObject.transform.position, collObject.transform.rotation);
             newOptionsUI.transform.localPosition = new Vector3(collObject.transform.position.x, collObject.transform.position.y + 7.72f); ///local position relative to checkpoint
             PlayerMove.Globals.ApplyV = false;
+            PlayerMove.Globals.CamOnfloor = true;
             transform.position = new Vector3(transform.position.x, transform.position.y + upDis);
             //mybody.constraints = RigidbodyConstraints2D.FreezePositionY;
+
 
             mybody.gravityScale = 0.0f;
 
