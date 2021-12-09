@@ -133,8 +133,8 @@ public class checkManager : MonoBehaviour
             if (first)
             {
                 PlayerAnimator.SetBool("isSitting", false);
-                PlayerAnimator.SetBool("isStanding", false);
-                PlayerAnimator.SetBool("isWalking", true);
+                PlayerAnimator.SetBool("isStanding", true);
+                PlayerAnimator.SetBool("isWalking", false);
                 PlayerAnimator.SetBool("isJumpDown", false);
                 PlayerAnimator.SetBool("isJumpUp", false);
             }

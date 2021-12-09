@@ -31,7 +31,9 @@ public class enemyC : MonoBehaviour
 
     public LayerMask layerMask;
 
+    public SpriteRenderer pRenderer;
 
+    enemyBehavior behavior;
     ///[SerializeField] private Sprite[] IdleSprites;
 
     //[SerializeField] private float animationSpeed = 0.3f;
@@ -42,7 +44,7 @@ public class enemyC : MonoBehaviour
     {
         enemyBody = gameObject.GetComponent<Rigidbody2D>();
         myRenderer = gameObject.GetComponent<SpriteRenderer>();
-
+        behavior = gameObject.GetComponent<enemyBehavior>();
         enemyX = gameObject.transform.position.x;
 
         //orgPosx = transform.position.x;
@@ -53,7 +55,7 @@ public class enemyC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        turnAround();
         enemyCurrentX = gameObject.transform.position.x;
         enemyCurrentDistance = Mathf.Abs(enemyCurrentX - enemyX);
 
@@ -172,6 +174,30 @@ public class enemyC : MonoBehaviour
         }
     }
 
+    void turnAround()
+    {
+        if (behavior.getHit)
+        {
+            if ((!myRenderer.flipX && pRenderer.flipX) || (myRenderer.flipX && !pRenderer.flipX))
+            {
+                //gameObject.transform.localScale = new Vector3(-1f, 1f, 1f);
+                enemySpeed = -1 * enemySpeed;
+                if (!myRenderer.flipX)
+                {
+                    myRenderer.flipX = true;
+                }
+                else if (myRenderer.flipX)
+                {
+                    myRenderer.flipX = false;
+                }
+                behavior.getHit = false;
+            }
+            else
+            {
+                behavior.getHit = false;
+            }
+        }
+    }
     private void FixedUpdate()
     {
         if (!myRenderer.flipX)

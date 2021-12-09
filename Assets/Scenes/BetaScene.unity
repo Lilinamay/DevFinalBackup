@@ -647,6 +647,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 512
+  pRenderer: {fileID: 1666076237}
 --- !u!95 &8637570
 Animator:
   serializedVersion: 3
@@ -684,6 +685,7 @@ MonoBehaviour:
   attackedTimer: 0
   rangedTimer: 0
   player: {fileID: 1666076227}
+  getHit: 0
 --- !u!50 &8637572
 Rigidbody2D:
   serializedVersion: 4
@@ -9676,6 +9678,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 512
+  pRenderer: {fileID: 1666076237}
 --- !u!114 &164427065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9694,6 +9697,7 @@ MonoBehaviour:
   attackedTimer: 0
   rangedTimer: 0
   player: {fileID: 1666076227}
+  getHit: 0
 --- !u!50 &164427066
 Rigidbody2D:
   serializedVersion: 4
@@ -16604,6 +16608,7 @@ MonoBehaviour:
   attackedTimer: 0
   rangedTimer: 0
   player: {fileID: 1666076227}
+  getHit: 0
 --- !u!50 &269172997
 Rigidbody2D:
   serializedVersion: 4
@@ -46227,6 +46232,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 512
+  pRenderer: {fileID: 1666076237}
 --- !u!114 &750428308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46245,6 +46251,7 @@ MonoBehaviour:
   attackedTimer: 0
   rangedTimer: 0
   player: {fileID: 1666076227}
+  getHit: 0
 --- !u!50 &750428309
 Rigidbody2D:
   serializedVersion: 4
@@ -49811,6 +49818,7 @@ MonoBehaviour:
   attackedTimer: 0
   rangedTimer: 0
   player: {fileID: 1666076227}
+  getHit: 0
 --- !u!50 &806342797
 Rigidbody2D:
   serializedVersion: 4
@@ -51115,6 +51123,7 @@ MonoBehaviour:
   attackedTimer: 0
   rangedTimer: 0
   player: {fileID: 1666076227}
+  getHit: 0
 --- !u!50 &834639646
 Rigidbody2D:
   serializedVersion: 4
@@ -55316,6 +55325,7 @@ MonoBehaviour:
   attackedTimer: 0
   rangedTimer: 0
   player: {fileID: 1666076227}
+  getHit: 0
 --- !u!50 &885737469
 Rigidbody2D:
   serializedVersion: 4
@@ -59684,6 +59694,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 512
+  pRenderer: {fileID: 1666076237}
 --- !u!114 &961441591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59702,6 +59713,7 @@ MonoBehaviour:
   attackedTimer: 0
   rangedTimer: 0
   player: {fileID: 1666076227}
+  getHit: 0
 --- !u!50 &961441592
 Rigidbody2D:
   serializedVersion: 4
@@ -64544,6 +64556,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 512
+  pRenderer: {fileID: 1666076237}
 --- !u!95 &1022415258
 Animator:
   serializedVersion: 3
@@ -64581,6 +64594,7 @@ MonoBehaviour:
   attackedTimer: 0
   rangedTimer: 0
   player: {fileID: 1666076227}
+  getHit: 0
 --- !u!50 &1022415260
 Rigidbody2D:
   serializedVersion: 4
@@ -72440,6 +72454,7 @@ MonoBehaviour:
   attackedTimer: 0
   rangedTimer: 0
   player: {fileID: 1666076227}
+  getHit: 0
 --- !u!50 &1125741619
 Rigidbody2D:
   serializedVersion: 4
@@ -73356,6 +73371,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 512
+  pRenderer: {fileID: 1666076237}
 --- !u!114 &1139646045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73374,6 +73390,7 @@ MonoBehaviour:
   attackedTimer: 0
   rangedTimer: 0
   player: {fileID: 1666076227}
+  getHit: 0
 --- !u!50 &1139646046
 Rigidbody2D:
   serializedVersion: 4
@@ -103189,6 +103206,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 512
+  pRenderer: {fileID: 1666076237}
 --- !u!95 &1605153871
 Animator:
   serializedVersion: 3
@@ -103226,6 +103244,7 @@ MonoBehaviour:
   attackedTimer: 0
   rangedTimer: 0
   player: {fileID: 1666076227}
+  getHit: 0
 --- !u!50 &1605153873
 Rigidbody2D:
   serializedVersion: 4
@@ -108711,6 +108730,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 512
+  pRenderer: {fileID: 1666076237}
 --- !u!114 &1682559608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108729,6 +108749,7 @@ MonoBehaviour:
   attackedTimer: 0
   rangedTimer: 0
   player: {fileID: 1666076227}
+  getHit: 0
 --- !u!50 &1682559609
 Rigidbody2D:
   serializedVersion: 4
@@ -108996,6 +109017,7 @@ MonoBehaviour:
   attackedTimer: 0
   rangedTimer: 0
   player: {fileID: 1666076227}
+  getHit: 0
 --- !u!50 &1684232293
 Rigidbody2D:
   serializedVersion: 4
@@ -112280,6 +112302,7 @@ MonoBehaviour:
   attackedTimer: 0
   rangedTimer: 0
   player: {fileID: 1666076227}
+  getHit: 0
 --- !u!212 &1729038574
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -114122,6 +114145,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 512
+  pRenderer: {fileID: 1666076237}
 --- !u!95 &1763819378
 Animator:
   serializedVersion: 3
@@ -114159,6 +114183,7 @@ MonoBehaviour:
   attackedTimer: 0
   rangedTimer: 0
   player: {fileID: 1666076227}
+  getHit: 0
 --- !u!50 &1763819380
 Rigidbody2D:
   serializedVersion: 4
@@ -114546,6 +114571,7 @@ MonoBehaviour:
   attackedTimer: 0
   rangedTimer: 0
   player: {fileID: 1666076227}
+  getHit: 0
 --- !u!212 &1767019409
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -115285,6 +115311,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 512
+  pRenderer: {fileID: 1666076237}
 --- !u!95 &1774193538
 Animator:
   serializedVersion: 3
@@ -115322,6 +115349,7 @@ MonoBehaviour:
   attackedTimer: 0
   rangedTimer: 0
   player: {fileID: 1666076227}
+  getHit: 0
 --- !u!50 &1774193540
 Rigidbody2D:
   serializedVersion: 4
@@ -124124,6 +124152,7 @@ MonoBehaviour:
   attackedTimer: 0
   rangedTimer: 0
   player: {fileID: 1666076227}
+  getHit: 0
 --- !u!212 &1924405885
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -131389,6 +131418,7 @@ MonoBehaviour:
   attackedTimer: 0
   rangedTimer: 0
   player: {fileID: 1666076227}
+  getHit: 0
 --- !u!50 &2030698775
 Rigidbody2D:
   serializedVersion: 4

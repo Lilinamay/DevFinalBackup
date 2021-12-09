@@ -12,6 +12,7 @@ public class enemyBehavior : MonoBehaviour
     SpriteRenderer myRenderer;
     public GameObject player;
     playerEnergy pEnergy;
+    public bool getHit;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +60,7 @@ public class enemyBehavior : MonoBehaviour
         {
             if(attackedTimer <= 0)
             {
+                getHit = true;
                 enemyHealth--;
                 attackedTimer = 0.3F;
                 if (pEnergy.energy < 1)
@@ -86,6 +88,7 @@ public class enemyBehavior : MonoBehaviour
         {
             if(rangedTimer <= 0)
             {
+                getHit = true;
                 Debug.Log("range attacked");
                 enemyHealth--;
                 myRenderer.color = Color.red;
