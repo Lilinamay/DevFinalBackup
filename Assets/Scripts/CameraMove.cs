@@ -12,6 +12,7 @@ public class CameraMove : MonoBehaviour
 
     float camSize;
     float camRatio;
+    public float ratio;
 
     Camera mainCam;
 
@@ -23,24 +24,27 @@ public class CameraMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        xMin = worldBounds.bounds.min.x;
-        xMax = worldBounds.bounds.max.x;
-        yMin = worldBounds.bounds.min.y;
-        yMax = worldBounds.bounds.max.y;
+        
 
         mainCam = gameObject.GetComponent<Camera>();
 
         camSize = mainCam.orthographicSize;
-        camRatio = (xMax + camSize) / 8.0f;
+        
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        worldBounds = SceneTransition.Globals.switchToBound.GetComponent<BoxCollider2D>();
+        ratio = 1415/ (SceneTransition.Globals.switchToBound.GetComponent<BoxCollider2D>().size.x + 10f);
+        xMin = worldBounds.bounds.min.x;
+        xMax = worldBounds.bounds.max.x;
+        yMin = worldBounds.bounds.min.y;
+        yMax = worldBounds.bounds.max.y;
+        camRatio = (xMax + camSize) / ratio;
 
-         
     }
 
     void FixedUpdate()
