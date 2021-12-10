@@ -38,8 +38,9 @@ public class CameraMove : MonoBehaviour
     void Update()
     {
         worldBounds = SceneTransition.Globals.switchToBound.GetComponent<BoxCollider2D>();
-        ratio = 1415/ (SceneTransition.Globals.switchToBound.GetComponent<BoxCollider2D>().size.x + 10f);
+        ratio = (worldBounds.bounds.max.x + 10f) / 18;
         xMin = worldBounds.bounds.min.x;
+        Debug.Log("boundmax" + worldBounds.bounds.max.x);
         xMax = worldBounds.bounds.max.x;
         yMin = worldBounds.bounds.min.y;
         yMax = worldBounds.bounds.max.y;
