@@ -12,6 +12,7 @@ public class SceneTransition : MonoBehaviour
     public GameObject WorldBound;
     public Animator BlackAnimator;
     bool canTrans;
+    PlayerMove pMove;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class SceneTransition : MonoBehaviour
         mybody = player.GetComponent<Rigidbody2D>();
         Globals.switchToBound = originalBound;
         canTrans = true;
+        pMove = player.GetComponent<PlayerMove>();
     }
 
     // Update is called once per frame
@@ -34,19 +36,35 @@ public class SceneTransition : MonoBehaviour
             BlackAnimator.SetTrigger("isBlackOut");
             canTrans = false;
             StartCoroutine(transport());
+            StartCoroutine(disableWalk());
 
 
         }
 
         IEnumerator transport()
         {
+            mybody.velocity = Vector3.zero;
+            
             yield return new WaitForSecondsRealtime(0.8f);
             player.transform.position = TP.position;
-            mybody.velocity = Vector3.zero;
+            
 
             Globals.switchToBound = WorldBound;
             canTrans = true;
         }
+    }
+
+    IEnumerator disableWalk()
+    {
+        yield return new WaitForSecondsRealtime(0.2f);
+        pMove.disableMove = true;
+        StartCoroutine(enableWalk());
+    }
+
+    IEnumerator enableWalk()
+    {
+        yield return new WaitForSecondsRealtime(1.2f);
+        pMove.disableMove = false;
     }
 
     public static class Globals
