@@ -21,7 +21,7 @@ public class NPCTrigger : MonoBehaviour
     {
         if(!listenH && listen)
         {
-            Invoke("listenNPC", 1);
+            Invoke("listenNPC", 0.5f);
             listenH = true;
         }
 
@@ -68,7 +68,7 @@ public class NPCTrigger : MonoBehaviour
             GameObject newListener = Instantiate(listenObject, transform.position, transform.rotation);
             //newListener.transform.SetParent(gameObject.transform);
             //newListener.transform.localPosition = new Vector3( 0f, 5f); ///local position relative to player
-            newListener.transform.position = new Vector3(gameObject.transform.position.x, player.transform.position.y + 7);
+            newListener.transform.position = new Vector3(gameObject.transform.position.x, player.transform.position.y + 4);
             listened = true;
         }
     }

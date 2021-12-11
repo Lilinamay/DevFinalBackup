@@ -44,6 +44,7 @@ public class checkManager : MonoBehaviour
     HomeTrans hometrans;
     [SerializeField] GameObject homemanage;
     [SerializeField] float UIMove;
+    public int textColor = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -262,7 +263,7 @@ public class checkManager : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y + upDis);
             //mybody.constraints = RigidbodyConstraints2D.FreezePositionY;
 
-
+            textColor = 0;
             mybody.gravityScale = 0.0f;
 
 
@@ -276,6 +277,7 @@ public class checkManager : MonoBehaviour
     {
         if(option == 0)
         {
+            textColor = 0;
             if (newOptions != null)
             {
                 Destroy(newOptions);
@@ -294,6 +296,7 @@ public class checkManager : MonoBehaviour
                     option = 0;
                     StartCoroutine(waitForTrans());
                     telBack = false;
+                    textColor = 1;
                 }
                 if (option == 2)
                 {
@@ -301,6 +304,7 @@ public class checkManager : MonoBehaviour
                     fluteManager.SetActive(true);
                     PlayerAnimator.SetBool("isFlute", true);
                     PlayerAnimator.SetBool("isSitting", false);
+                    textColor = 2;
                 }
                 if (option == 3)
                 {
@@ -318,7 +322,7 @@ public class checkManager : MonoBehaviour
                     PlayerAnimator.SetBool("isFlute", false);
                     PlayerAnimator.SetBool("isSitting", false);
                     PlayerAnimator.SetBool("isStanding", true);
-
+                    textColor = 3;
                 }
             }
 
