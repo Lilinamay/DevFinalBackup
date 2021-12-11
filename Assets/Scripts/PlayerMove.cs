@@ -228,8 +228,15 @@ public class PlayerMove : MonoBehaviour
         }
 
         if (Input.GetKey(KeyCode.Z) && hasJumpedOnce && jumpKeyReleased && !isDashing)   //double jump conditions
-        {
-            myBody.velocity = new Vector3(myBody.velocity.x, jumpHeight);
+        {   if (!Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow))
+            {
+                myBody.velocity = new Vector3(0, jumpHeight);
+            }
+            else
+            {
+                myBody.velocity = new Vector3(myBody.velocity.x, jumpHeight);
+            }
+            
 
             jumpKeyReleased = false;
             hasJumpedOnce = false;
