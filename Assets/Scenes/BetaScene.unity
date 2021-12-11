@@ -617,7 +617,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8637567}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.38, y: -59.13, z: 0}
+  m_LocalPosition: {x: 12.3, y: -59.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 251224446}
@@ -25846,6 +25846,7 @@ MonoBehaviour:
   myOriPos: {x: 0, y: 0, z: 0}
   comeUnder: 0
   Camera: {fileID: 1707585366}
+  origBound: {fileID: 641523044}
 --- !u!4 &392288614
 Transform:
   m_ObjectHideFlags: 0
@@ -59615,7 +59616,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 885737464}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.03, y: -92.41, z: 0}
+  m_LocalPosition: {x: -6.6000004, y: -92.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1317289793}
@@ -64422,7 +64423,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961441587}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 67.25, y: -86.11, z: 0}
+  m_LocalPosition: {x: 54.000004, y: -86.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1491492494}
@@ -79063,7 +79064,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1139646041}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 124.7, y: -86.11, z: 0}
+  m_LocalPosition: {x: 93.9, y: -86.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1491492494}
@@ -115995,6 +115996,7 @@ MonoBehaviour:
   PlayerAnimator: {fileID: 1666076228}
   homemanage: {fileID: 392288612}
   UIMove: 1.05
+  textColor: 0
 --- !u!114 &1666076234
 MonoBehaviour:
   m_ObjectHideFlags: 0

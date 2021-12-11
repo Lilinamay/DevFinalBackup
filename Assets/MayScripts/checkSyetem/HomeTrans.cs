@@ -13,6 +13,8 @@ public class HomeTrans : MonoBehaviour
     HomeChair homeChair;
     public bool comeUnder = false;
     public GameObject Camera;
+    public GameObject origBound;
+    GameObject saveBound;
     Rigidbody2D mybody;
 
     // Start is called before the first frame update
@@ -31,7 +33,10 @@ public class HomeTrans : MonoBehaviour
     public void goHome()
     {
         myOriPos = player.GetComponent<checkManager>().collObject.transform.position;
+        saveBound = SceneTransition.Globals.switchToBound;
+
         player.transform.position = homePos.position;
+        SceneTransition.Globals.switchToBound = origBound;
         mybody.velocity = Vector3.zero;
         homeChair.comeHome = true;
         //Object.DontDestroyOnLoad(this.gameObject);
@@ -44,6 +49,7 @@ public class HomeTrans : MonoBehaviour
     {
         comeUnder = true;
         player.transform.position = myOriPos;
+        SceneTransition.Globals.switchToBound = saveBound;
         PlayerMove.Globals.CamFloorY = player.transform.position.y - 0.5f;
         mybody.velocity = Vector3.zero;
         //Camera.transform.position = new Vector3(myOriPos.x, myOriPos.y+4);

@@ -39,6 +39,8 @@ public class checkManager : MonoBehaviour
     bool duringRes = false;
     bool telBack = false;
 
+    GameObject saveBound;
+
     Rigidbody2D mybody;
 
     HomeTrans hometrans;
@@ -52,6 +54,7 @@ public class checkManager : MonoBehaviour
         //SaveSparkle = 0;
         SaveX = transform.position.x;
         SaveY = transform.position.y;
+        saveBound = SceneTransition.Globals.switchToBound;
 
         itemList = new List<GameObject>();
 
@@ -85,6 +88,7 @@ public class checkManager : MonoBehaviour
             { 
             SaveX = transform.position.x;
             SaveY = transform.position.y-0.5f;
+            saveBound = SceneTransition.Globals.switchToBound;
             Debug.Log("progress saved");
             //check = false;
             itemList.Clear();
@@ -101,6 +105,9 @@ public class checkManager : MonoBehaviour
 
 
             transform.position = new Vector3(SaveX, SaveY);
+
+            SceneTransition.Globals.switchToBound = saveBound;
+
             PlayerMove.Globals.CamOnfloor = true;
             PlayerMove.Globals.CamFloorY = SaveY;
             Debug.Log(new Vector3(SaveX, SaveY));                                                               //add anything that need to be reset after respawn
