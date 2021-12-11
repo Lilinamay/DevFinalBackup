@@ -347,7 +347,7 @@ public class PlayerMove : MonoBehaviour
             Debug.Log("playerRAYCAST:" +hit.collider.name);
             if (hit.collider.tag == "floor")
             {
-                //Debug.Log("floor below, can jump");
+                Debug.Log("player: floor below, can jump");
                 onFloor = true;
 
                 canDash = true;
