@@ -11,12 +11,14 @@ public class SceneTransition : MonoBehaviour
     public GameObject originalBound;
     public GameObject WorldBound;
     public Animator BlackAnimator;
+    bool canTrans;
 
     // Start is called before the first frame update
     void Start()
     {
         mybody = player.GetComponent<Rigidbody2D>();
         Globals.switchToBound = originalBound;
+        canTrans = true;
     }
 
     // Update is called once per frame
@@ -27,9 +29,10 @@ public class SceneTransition : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.name == "Player")
+        if (collision.name == "Player" && canTrans)
         {
             BlackAnimator.SetTrigger("isBlackOut");
+            canTrans = false;
             StartCoroutine(transport());
 
 
@@ -37,11 +40,12 @@ public class SceneTransition : MonoBehaviour
 
         IEnumerator transport()
         {
-            yield return new WaitForSecondsRealtime(0.5f);
+            yield return new WaitForSecondsRealtime(0.8f);
             player.transform.position = TP.position;
             mybody.velocity = Vector3.zero;
 
             Globals.switchToBound = WorldBound;
+            canTrans = true;
         }
     }
 
