@@ -115994,6 +115994,7 @@ MonoBehaviour:
   fluteManager: {fileID: 1841988340}
   PlayerAnimator: {fileID: 1666076228}
   homemanage: {fileID: 392288612}
+  UIMove: 1.05
 --- !u!114 &1666076234
 MonoBehaviour:
   m_ObjectHideFlags: 0

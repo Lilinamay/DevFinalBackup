@@ -80,7 +80,7 @@ public class HomeChair : MonoBehaviour
             newOptions = Instantiate(optionObject, gameObject.transform.position, gameObject.transform.rotation);
             newOptions.transform.localPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 6f); ///local position relative to checkpoint
             newOptionsUI = Instantiate(optionObjectUI, gameObject.transform.position, gameObject.transform.rotation);
-            newOptionsUI.transform.localPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 7.72f); ///local position relative to checkpoint
+            newOptionsUI.transform.localPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 7.1f); ///local position relative to checkpoint
             PlayerMove.Globals.ApplyV = false;
             player.transform.position = new Vector3(transform.position.x, transform.position.y + upDis);
             //mybody.constraints = RigidbodyConstraints2D.FreezePositionY;
@@ -147,12 +147,12 @@ public class HomeChair : MonoBehaviour
             if (option < 3 && Input.GetKeyDown(KeyCode.DownArrow))
             {
                 option++;
-                newOptionsUI.transform.position = new Vector3(newOptionsUI.transform.position.x, newOptionsUI.transform.position.y - 1.65f);
+                newOptionsUI.transform.position = new Vector3(newOptionsUI.transform.position.x, newOptionsUI.transform.position.y - 1.05f);
             }
             if (option > 1 && Input.GetKeyDown(KeyCode.UpArrow))
             {
                 option--;
-                newOptionsUI.transform.position = new Vector3(newOptionsUI.transform.position.x, newOptionsUI.transform.position.y + 1.65f);
+                newOptionsUI.transform.position = new Vector3(newOptionsUI.transform.position.x, newOptionsUI.transform.position.y + 1.05f);
             }
         }
     }

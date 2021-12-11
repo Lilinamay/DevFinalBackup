@@ -43,6 +43,7 @@ public class checkManager : MonoBehaviour
 
     HomeTrans hometrans;
     [SerializeField] GameObject homemanage;
+    [SerializeField] float UIMove;
     // Start is called before the first frame update
     void Start()
     {
@@ -255,7 +256,7 @@ public class checkManager : MonoBehaviour
             newOptions = Instantiate(optionObject, collObject.transform.position, collObject.transform.rotation);
             newOptions.transform.localPosition = new Vector3(collObject.transform.position.x, collObject.transform.position.y + 6f); ///local position relative to checkpoint
             newOptionsUI = Instantiate(optionObjectUI, collObject.transform.position, collObject.transform.rotation);
-            newOptionsUI.transform.localPosition = new Vector3(collObject.transform.position.x, collObject.transform.position.y + 7.72f); ///local position relative to checkpoint
+            newOptionsUI.transform.localPosition = new Vector3(collObject.transform.position.x, collObject.transform.position.y + 7.1f); ///local position relative to checkpoint
             PlayerMove.Globals.ApplyV = false;
             
             transform.position = new Vector3(transform.position.x, transform.position.y + upDis);
@@ -324,12 +325,12 @@ public class checkManager : MonoBehaviour
             if(option<3 && Input.GetKeyDown(KeyCode.DownArrow))
             {
                 option++;
-                newOptionsUI.transform.position = new Vector3(newOptionsUI.transform.position.x, newOptionsUI.transform.position.y - 1.65f);
+                newOptionsUI.transform.position = new Vector3(newOptionsUI.transform.position.x, newOptionsUI.transform.position.y - UIMove);
             }
             if(option >1 && Input.GetKeyDown(KeyCode.UpArrow))
             {
                 option--;
-                newOptionsUI.transform.position  = new Vector3(newOptionsUI.transform.position.x, newOptionsUI.transform.position.y+ 1.65f);
+                newOptionsUI.transform.position  = new Vector3(newOptionsUI.transform.position.x, newOptionsUI.transform.position.y+ UIMove);
             }
         }
     }
