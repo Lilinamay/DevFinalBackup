@@ -23104,7 +23104,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.08, y: 96.52}
+  m_AnchoredPosition: {x: 1.08, y: 102.5}
   m_SizeDelta: {x: 637.61, y: 39.37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &355683940
@@ -23129,8 +23129,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: the lost village
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 420f33b8fbff14a56bef603ec9b42644, type: 2}
+  m_sharedMaterial: {fileID: -7389810598809210892, guid: 420f33b8fbff14a56bef603ec9b42644, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -23164,7 +23164,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -46799,7 +46799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   comeHome: 0
   option: 0
-  optionObject: {fileID: 6588401430377697468, guid: bee4c83a1fde24303ad4882cbf68df3e, type: 3}
+  optionObject: {fileID: 8993357773756093034, guid: bc26d7e2488fc43b6bdf5c45de3afa97, type: 3}
   optionObjectUI: {fileID: 7620986671176040274, guid: e0bd34100082e420788636b2669258b7, type: 3}
   fluteManager: {fileID: 1841988340}
   PlayerAnimator: {fileID: 1666076228}
@@ -110799,7 +110799,7 @@ RectTransform:
   m_GameObject: {fileID: 1595178486}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2046998582}
   m_RootOrder: 2
@@ -110829,10 +110829,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: DIRTHMOTH
+  m_text: Undercity
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6b4b2fb47d13b43c9a2d06646c449c73, type: 2}
+  m_sharedMaterial: {fileID: 9168558726042257515, guid: 6b4b2fb47d13b43c9a2d06646c449c73, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -110856,8 +110856,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 46.01
-  m_fontSizeBase: 46.01
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -115990,7 +115990,7 @@ MonoBehaviour:
   saved: 0
   first: 1
   option: 0
-  optionObject: {fileID: 6249829761423040983, guid: f6d3dd7ad22bf463da946a25c595aa91, type: 3}
+  optionObject: {fileID: 4201937397260822917, guid: f6d3dd7ad22bf463da946a25c595aa91, type: 3}
   optionObjectUI: {fileID: 7620986671176040274, guid: e0bd34100082e420788636b2669258b7, type: 3}
   fluteManager: {fileID: 1841988340}
   PlayerAnimator: {fileID: 1666076228}

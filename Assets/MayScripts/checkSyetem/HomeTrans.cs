@@ -50,7 +50,7 @@ public class HomeTrans : MonoBehaviour
         comeUnder = true;
         player.transform.position = myOriPos;
         SceneTransition.Globals.switchToBound = saveBound;
-        PlayerMove.Globals.CamFloorY = player.transform.position.y - 0.5f;
+        PlayerMove.Globals.CamFloorY = player.transform.position.y;
         mybody.velocity = Vector3.zero;
         //Camera.transform.position = new Vector3(myOriPos.x, myOriPos.y+4);
 

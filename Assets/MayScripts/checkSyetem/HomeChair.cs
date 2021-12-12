@@ -47,7 +47,7 @@ public class HomeChair : MonoBehaviour
     {
         if (comeHome)
         {
-            createOptions(0.3f);   //0.5
+            createOptions(0.2f);   //0.5
             comeHome = false;
             Come = true;
         }
@@ -84,7 +84,7 @@ public class HomeChair : MonoBehaviour
             PlayerMove.Globals.ApplyV = false;
             player.transform.position = new Vector3(transform.position.x, transform.position.y + upDis);
             //mybody.constraints = RigidbodyConstraints2D.FreezePositionY;
-
+            newOptions.GetComponent<changeColor>().textColor = 0;
             playerBody.gravityScale = 0.0f;
 
     }
@@ -101,10 +101,12 @@ public class HomeChair : MonoBehaviour
         }
         if (option != 0)
         {
+            //newOptions.GetComponent<changeColor>().textColor = 0;
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 if (option == 1)
                 {
+                    newOptions.GetComponent<changeColor>().textColor = 1;
                     BlackAnimator.SetTrigger("isBlackOut");
                     Debug.Log("go under, change scene");
                     fluteManager.SetActive(false);
@@ -119,6 +121,7 @@ public class HomeChair : MonoBehaviour
                 }
                 if (option == 2)
                 {
+                    newOptions.GetComponent<changeColor>().textColor = 2;
                     Debug.Log("play flute");
                     fluteManager.SetActive(true);
                     PlayerAnimator.SetBool("isFlute", true);
@@ -126,6 +129,7 @@ public class HomeChair : MonoBehaviour
                 }
                 if (option == 3)
                 {
+                    newOptions.GetComponent<changeColor>().textColor = 3;
                     Debug.Log("leave");
                     player.GetComponent<PlayerMove>().disableMove = false;
                     player.GetComponent<playerEnergy>().disableEner = false;
@@ -217,7 +221,7 @@ public class HomeChair : MonoBehaviour
             {
                 saved = true;
                 Destroy(newChecker);
-                createOptions(0.5f);
+                createOptions(0.3f);
             }
         }
     }

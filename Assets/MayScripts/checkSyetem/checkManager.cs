@@ -153,7 +153,7 @@ public class checkManager : MonoBehaviour
         if (hometrans.comeUnder)
         {
             telBack = true;
-            createOptions(0f);
+            createOptions(0.2f);
             hometrans.comeUnder = false;
             PlayerAnimator.SetBool("isSitting", true);
             PlayerAnimator.SetBool("isStanding", false);
@@ -231,7 +231,7 @@ public class checkManager : MonoBehaviour
                 first = false;
                 saved = true;
                 Destroy(newChecker);
-                createOptions(0.5f);
+                createOptions(0.3f);
             }
         }
     }
@@ -270,7 +270,8 @@ public class checkManager : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y + upDis);
             //mybody.constraints = RigidbodyConstraints2D.FreezePositionY;
 
-            textColor = 0;
+            //textColor = 0;
+            newOptions.GetComponent<changeColor>().textColor = 0;
             mybody.gravityScale = 0.0f;
 
 
@@ -284,7 +285,7 @@ public class checkManager : MonoBehaviour
     {
         if(option == 0)
         {
-            textColor = 0;
+            //newOptions.GetComponent<changeColor>().textColor = 0;
             if (newOptions != null)
             {
                 Destroy(newOptions);
@@ -293,6 +294,7 @@ public class checkManager : MonoBehaviour
         }
         if(option != 0)
         {
+            //newOptions.GetComponent<changeColor>().textColor = 0;
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 if(option == 1)
@@ -303,7 +305,7 @@ public class checkManager : MonoBehaviour
                     option = 0;
                     StartCoroutine(waitForTrans());
                     telBack = false;
-                    textColor = 1;
+                    newOptions.GetComponent<changeColor>().textColor = 1;
                 }
                 if (option == 2)
                 {
@@ -311,7 +313,7 @@ public class checkManager : MonoBehaviour
                     fluteManager.SetActive(true);
                     PlayerAnimator.SetBool("isFlute", true);
                     PlayerAnimator.SetBool("isSitting", false);
-                    textColor = 2;
+                    newOptions.GetComponent<changeColor>().textColor = 2;
                 }
                 if (option == 3)
                 {
@@ -329,7 +331,7 @@ public class checkManager : MonoBehaviour
                     PlayerAnimator.SetBool("isFlute", false);
                     PlayerAnimator.SetBool("isSitting", false);
                     PlayerAnimator.SetBool("isStanding", true);
-                    textColor = 3;
+                    newOptions.GetComponent<changeColor>().textColor = 3;
                 }
             }
 
