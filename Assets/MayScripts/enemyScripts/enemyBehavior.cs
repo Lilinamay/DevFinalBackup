@@ -69,13 +69,13 @@ public class enemyBehavior : MonoBehaviour
                 }
                 if (player.GetComponent<PlayerMove>().faceR)
                 {
-                    player.transform.position = new Vector3(player.transform.position.x - 0.1f, player.transform.position.y);
-                    gameObject.transform.position = new Vector3(gameObject.transform.position.x + 0.7f, gameObject.transform.position.y);
+                    player.transform.position = new Vector3(player.transform.position.x - 0.2f, player.transform.position.y);
+                    gameObject.transform.position = new Vector3(gameObject.transform.position.x + 1f, gameObject.transform.position.y);
                 }
                 else
                 {
-                    player.transform.position = new Vector3(player.transform.position.x + 0.1f, player.transform.position.y);
-                    gameObject.transform.position = new Vector3(gameObject.transform.position.x - 0.7f, gameObject.transform.position.y);
+                    player.transform.position = new Vector3(player.transform.position.x + 0.2f, player.transform.position.y);
+                    gameObject.transform.position = new Vector3(gameObject.transform.position.x - 1f, gameObject.transform.position.y);
                     //gameObject.transform.localPosition = new Vector3(1, 0, 0);
                     //collision.gameObject.transform.localPosition = new Vector3(-1, 0, 0);
                 }
