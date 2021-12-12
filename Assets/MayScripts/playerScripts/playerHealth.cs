@@ -24,7 +24,8 @@ public class playerHealth : MonoBehaviour
 
     SpriteRenderer myRenderer;
     Rigidbody2D mybody;
-    
+
+    public Animator blackAIM;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +46,7 @@ public class playerHealth : MonoBehaviour
             respawned = true;
             respawnBack = true;
             mybody.velocity = Vector3.zero;
+            blackAIM.SetTrigger("isBlackOut");
         }
 
 

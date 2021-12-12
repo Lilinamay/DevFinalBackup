@@ -686,6 +686,7 @@ MonoBehaviour:
   rangedTimer: 0
   player: {fileID: 1666076227}
   getHit: 0
+  mycamera: {fileID: 1707585366}
 --- !u!50 &8637572
 Rigidbody2D:
   serializedVersion: 4
@@ -10516,6 +10517,7 @@ MonoBehaviour:
   rangedTimer: 0
   player: {fileID: 1666076227}
   getHit: 0
+  mycamera: {fileID: 1707585366}
 --- !u!50 &164427066
 Rigidbody2D:
   serializedVersion: 4
@@ -17541,6 +17543,7 @@ MonoBehaviour:
   rangedTimer: 0
   player: {fileID: 1666076227}
   getHit: 0
+  mycamera: {fileID: 1707585366}
 --- !u!50 &269172997
 Rigidbody2D:
   serializedVersion: 4
@@ -50122,6 +50125,7 @@ MonoBehaviour:
   rangedTimer: 0
   player: {fileID: 1666076227}
   getHit: 0
+  mycamera: {fileID: 1707585366}
 --- !u!50 &750428309
 Rigidbody2D:
   serializedVersion: 4
@@ -53867,6 +53871,7 @@ MonoBehaviour:
   rangedTimer: 0
   player: {fileID: 1666076227}
   getHit: 0
+  mycamera: {fileID: 1707585366}
 --- !u!50 &806342797
 Rigidbody2D:
   serializedVersion: 4
@@ -55363,6 +55368,7 @@ MonoBehaviour:
   rangedTimer: 0
   player: {fileID: 1666076227}
   getHit: 0
+  mycamera: {fileID: 1707585366}
 --- !u!50 &834639646
 Rigidbody2D:
   serializedVersion: 4
@@ -59674,6 +59680,7 @@ MonoBehaviour:
   rangedTimer: 0
   player: {fileID: 1666076227}
   getHit: 0
+  mycamera: {fileID: 1707585366}
 --- !u!50 &885737469
 Rigidbody2D:
   serializedVersion: 4
@@ -64494,6 +64501,7 @@ MonoBehaviour:
   rangedTimer: 0
   player: {fileID: 1666076227}
   getHit: 0
+  mycamera: {fileID: 1707585366}
 --- !u!50 &961441592
 Rigidbody2D:
   serializedVersion: 4
@@ -69788,6 +69796,7 @@ MonoBehaviour:
   rangedTimer: 0
   player: {fileID: 1666076227}
   getHit: 0
+  mycamera: {fileID: 1707585366}
 --- !u!50 &1022415260
 Rigidbody2D:
   serializedVersion: 4
@@ -78199,6 +78208,7 @@ MonoBehaviour:
   rangedTimer: 0
   player: {fileID: 1666076227}
   getHit: 0
+  mycamera: {fileID: 1707585366}
 --- !u!50 &1125741619
 Rigidbody2D:
   serializedVersion: 4
@@ -79135,6 +79145,7 @@ MonoBehaviour:
   rangedTimer: 0
   player: {fileID: 1666076227}
   getHit: 0
+  mycamera: {fileID: 1707585366}
 --- !u!50 &1139646046
 Rigidbody2D:
   serializedVersion: 4
@@ -111505,6 +111516,7 @@ MonoBehaviour:
   rangedTimer: 0
   player: {fileID: 1666076227}
   getHit: 0
+  mycamera: {fileID: 1707585366}
 --- !u!50 &1605153873
 Rigidbody2D:
   serializedVersion: 4
@@ -115800,13 +115812,14 @@ MonoBehaviour:
   respawned: 0
   respawnBack: 0
   invinsibleTimer: 0
-  invinsibleT: 3
+  invinsibleT: 2
   health1: {fileID: 1734584515}
   health2: {fileID: 126030041}
   health3: {fileID: 622537201}
   health4: {fileID: 1448890125}
   lostA: 0.3
   freezeScreen: {fileID: 453192031}
+  blackAIM: {fileID: 794808289}
 --- !u!114 &1666076233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117508,6 +117521,7 @@ MonoBehaviour:
   rangedTimer: 0
   player: {fileID: 1666076227}
   getHit: 0
+  mycamera: {fileID: 1707585366}
 --- !u!50 &1682559609
 Rigidbody2D:
   serializedVersion: 4
@@ -117776,6 +117790,7 @@ MonoBehaviour:
   rangedTimer: 0
   player: {fileID: 1666076227}
   getHit: 0
+  mycamera: {fileID: 1707585366}
 --- !u!50 &1684232293
 Rigidbody2D:
   serializedVersion: 4
@@ -119253,10 +119268,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46b3331d76e844cc0949e67d21df1fa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 0.12
-  magnitude: 0.7
-  smoothR: 0.8
-  playerRenderer: {fileID: 1666076237}
 --- !u!114 &1707585369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121094,6 +121105,7 @@ MonoBehaviour:
   rangedTimer: 0
   player: {fileID: 1666076227}
   getHit: 0
+  mycamera: {fileID: 1707585366}
 --- !u!212 &1729038574
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -123211,6 +123223,7 @@ MonoBehaviour:
   rangedTimer: 0
   player: {fileID: 1666076227}
   getHit: 0
+  mycamera: {fileID: 1707585366}
 --- !u!50 &1763819380
 Rigidbody2D:
   serializedVersion: 4
@@ -123599,6 +123612,7 @@ MonoBehaviour:
   rangedTimer: 0
   player: {fileID: 1666076227}
   getHit: 0
+  mycamera: {fileID: 1707585366}
 --- !u!212 &1767019409
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -124377,6 +124391,7 @@ MonoBehaviour:
   rangedTimer: 0
   player: {fileID: 1666076227}
   getHit: 0
+  mycamera: {fileID: 1707585366}
 --- !u!50 &1774193540
 Rigidbody2D:
   serializedVersion: 4
@@ -133758,6 +133773,7 @@ MonoBehaviour:
   rangedTimer: 0
   player: {fileID: 1666076227}
   getHit: 0
+  mycamera: {fileID: 1707585366}
 --- !u!212 &1924405885
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -141842,6 +141858,7 @@ MonoBehaviour:
   rangedTimer: 0
   player: {fileID: 1666076227}
   getHit: 0
+  mycamera: {fileID: 1707585366}
 --- !u!50 &2030698775
 Rigidbody2D:
   serializedVersion: 4

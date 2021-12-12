@@ -103,9 +103,7 @@ public class checkManager : MonoBehaviour
         if (GetComponent<playerHealth>().respawn == true)
         {
 
-
-            transform.position = new Vector3(SaveX, SaveY);
-
+            
             SceneTransition.Globals.switchToBound = saveBound;
 
             PlayerMove.Globals.CamOnfloor = true;
@@ -114,7 +112,6 @@ public class checkManager : MonoBehaviour
             GetComponent<playerEnergy>().energy = 1;
             GetComponent<playerHealth>().playerHealthstat = GetComponent<playerHealth>().myHealth;
             GetComponent<playerHealth>().invinsibleTimer = GetComponent<playerHealth>().invinsibleT;
-            
             foreach (GameObject item in itemList)
             {
                 item.SetActive(true);
@@ -125,6 +122,9 @@ public class checkManager : MonoBehaviour
                     item.GetComponent<SpriteRenderer>().color = Color.white;
                 }
             }
+            
+
+            StartCoroutine(respawnBack());
             if (!first)
             {
                 PlayerAnimator.SetBool("isSitting", true);
@@ -137,7 +137,7 @@ public class checkManager : MonoBehaviour
                 option = 1;
                 duringRes = true;
                 mybody.velocity = Vector3.zero;
-                createOptions(0.5f);
+                createOptions(1f);
             }
             if (first)
             {
@@ -148,6 +148,7 @@ public class checkManager : MonoBehaviour
                 PlayerAnimator.SetBool("isJumpUp", false);
             }
             GetComponent<playerHealth>().respawn = false;
+            /////////////////
         }
 
         if (hometrans.comeUnder)
@@ -245,7 +246,16 @@ public class checkManager : MonoBehaviour
             
         }
     }*/
-    
+    IEnumerator respawnBack()
+    {
+        yield return new WaitForSecondsRealtime(1);
+        transform.position = new Vector3(SaveX, SaveY);
+        transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f);
+
+
+
+    }
+
     private void createOptions(float upDis)
     {
         if (!first)
