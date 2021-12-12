@@ -12,6 +12,9 @@ public class SceneTransition : MonoBehaviour
     public GameObject WorldBound;
     public Animator BlackAnimator;
     bool canTrans;
+    bool goUp;
+    float upVelocity;
+    public Animator playerAnimator;
     PlayerMove pMove;
 
     // Start is called before the first frame update
@@ -20,13 +23,18 @@ public class SceneTransition : MonoBehaviour
         mybody = player.GetComponent<Rigidbody2D>();
         Globals.switchToBound = originalBound;
         canTrans = true;
+        goUp = false;
         pMove = player.GetComponent<PlayerMove>();
+        upVelocity = 15f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (goUp)
+        {
+            mybody.velocity = new Vector2(mybody.velocity.x, upVelocity);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -35,6 +43,11 @@ public class SceneTransition : MonoBehaviour
         {
             BlackAnimator.SetTrigger("isBlackOut");
             canTrans = false;
+            if (mybody.velocity.y > 0)
+            {
+                goUp = true;
+                
+            }
             StartCoroutine(transport());
             StartCoroutine(disableWalk());
 
@@ -43,13 +56,21 @@ public class SceneTransition : MonoBehaviour
 
         IEnumerator transport()
         {
-            mybody.velocity = Vector3.zero;
             
-            yield return new WaitForSecondsRealtime(0.8f);
+            
+            yield return new WaitForSecondsRealtime(1f);
+            goUp = false;
+            playerAnimator.SetBool("isJumpUp", false);
+            playerAnimator.SetBool("isJumpDown", false);
+            playerAnimator.SetBool("isStanding", true);
+            playerAnimator.SetBool("isWalking", false);
+            mybody.velocity = Vector3.zero;
             player.transform.position = TP.position;
             
+        
 
-            Globals.switchToBound = WorldBound;
+        Globals.switchToBound = WorldBound;
+            
             canTrans = true;
         }
     }
@@ -63,7 +84,7 @@ public class SceneTransition : MonoBehaviour
 
     IEnumerator enableWalk()
     {
-        yield return new WaitForSecondsRealtime(1.2f);
+        yield return new WaitForSecondsRealtime(2.0f);
         pMove.disableMove = false;
     }
 

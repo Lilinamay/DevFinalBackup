@@ -2173,6 +2173,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 741762364}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &31708037
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3583,6 +3584,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 1389060781}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &45049080
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8711,6 +8713,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 469725349}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &143237781
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19406,7 +19409,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 293311762}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 149.4, y: -71.9, z: 0}
+  m_LocalPosition: {x: 149.4, y: -74.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1582477640}
@@ -21770,7 +21773,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 331517015}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 148.7, y: -66.3, z: 0}
+  m_LocalPosition: {x: 148.7, y: -68.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 267250722}
@@ -22778,6 +22781,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 1571497176}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &344491811
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25401,7 +25405,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 103.69705, y: -26.572369}
+  m_Offset: {x: 103.69705, y: -26.429504}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -25412,7 +25416,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 98.30136, y: 33.847336}
+  m_Size: {x: 98.30136, y: 33.561607}
   m_EdgeRadius: 0
 --- !u!1 &388856800
 GameObject:
@@ -27265,6 +27269,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 89686071}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &411241803
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27392,6 +27397,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 2104877054}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &412610035
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29778,6 +29784,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 741762364}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &459571235
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33569,7 +33576,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503629466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 148.6, y: -86.5, z: 0}
+  m_LocalPosition: {x: 148.6, y: -87.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 425232663}
@@ -38284,6 +38291,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 651916395}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &586163397
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39066,6 +39074,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 606353106}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &598451686
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39979,7 +39988,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 132.35695, y: -90.980286}
+  m_Offset: {x: 132.35695, y: -91.17023}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -39990,7 +39999,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 38.871735, y: 86.2435}
+  m_Size: {x: 38.871735, y: 85.86362}
   m_EdgeRadius: 0
 --- !u!1 &607774004
 GameObject:
@@ -40117,6 +40126,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 1571497176}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &608418922
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -42786,6 +42796,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 818821652}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &646402118
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -43434,6 +43445,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 2104877054}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &651954987
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -54923,7 +54935,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 828169717}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 149.2, y: -67.6, z: 0}
+  m_LocalPosition: {x: 149.2, y: -69.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 412891017}
@@ -61601,6 +61613,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 388223462}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &918605978
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -61912,6 +61925,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 1741635864}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &921597875
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -65146,6 +65160,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 1741635864}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &969768340
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -66052,6 +66067,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 2104877054}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &981489636
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -67161,6 +67177,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 1389060781}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &988240529
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -76262,6 +76279,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 2104877054}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &1101176509
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -81723,6 +81741,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 265852910}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &1167943912
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -87108,6 +87127,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 469725349}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &1244830850
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -89345,6 +89365,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 388223462}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &1276310260
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -91083,6 +91104,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 388223462}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &1302150161
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -95233,6 +95255,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 1571497176}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &1364210134
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -97726,6 +97749,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 206842935}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &1400882270
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -102530,6 +102554,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 490583621}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &1477030068
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -105728,6 +105753,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 206842935}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &1522841635
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -106892,6 +106918,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 1992876419}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &1540749427
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -109084,6 +109111,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 606353106}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &1574188949
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -111805,7 +111833,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1606380104}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 218.73, y: -99.26, z: 0}
+  m_LocalPosition: {x: 218.73, y: -99.4, z: 0}
   m_LocalScale: {x: 12, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1263569021}
@@ -117261,6 +117289,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 89686071}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &1681230868
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -121664,6 +121693,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 1571497176}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &1734626544
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -121949,7 +121979,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -24.492813, y: 1.4395142}
+  m_Offset: {x: -24.492813, y: 1.2953091}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -121960,7 +121990,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 162.8667, y: 39.230537}
+  m_Size: {x: 162.8667, y: 38.942127}
   m_EdgeRadius: 0
 --- !u!1 &1742671648
 GameObject:
@@ -125007,6 +125037,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 1741635864}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &1790606710
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -125864,6 +125895,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 818821652}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &1810053189
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -134223,6 +134255,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 606353106}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &1930588985
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -138063,6 +138096,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 641523044}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &1985105559
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -139531,6 +139565,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 490583621}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &1999270774
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -146439,6 +146474,7 @@ MonoBehaviour:
   originalBound: {fileID: 641523044}
   WorldBound: {fileID: 651916395}
   BlackAnimator: {fileID: 794808289}
+  playerAnimator: {fileID: 1666076228}
 --- !u!61 &2099729030
 BoxCollider2D:
   m_ObjectHideFlags: 0
