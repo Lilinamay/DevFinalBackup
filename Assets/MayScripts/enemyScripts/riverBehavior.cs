@@ -12,6 +12,8 @@ public class riverBehavior : MonoBehaviour
     bool respawnBack;
     Rigidbody2D mybody;
 
+    public Animator blackAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +46,11 @@ public class riverBehavior : MonoBehaviour
 
     IEnumerator changeColor()
     {
-        yield return new WaitForSecondsRealtime(0.5f);
+        if (playerHealth > 1)
+        {
+            blackAnimator.SetTrigger("isBlackOut");
+        }
+        yield return new WaitForSecondsRealtime(1f);
         playerRenderer.color = Color.white;
         if (playerHealth >1 )
         {

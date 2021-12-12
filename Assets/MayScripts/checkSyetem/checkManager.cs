@@ -47,6 +47,8 @@ public class checkManager : MonoBehaviour
     [SerializeField] GameObject homemanage;
     [SerializeField] float UIMove;
     public int textColor = 0;
+    public Animator blackAIM;
+    Vector2 deadPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -103,13 +105,14 @@ public class checkManager : MonoBehaviour
         if (GetComponent<playerHealth>().respawn == true)
         {
 
-            
-            SceneTransition.Globals.switchToBound = saveBound;
+            deadPos = transform.position;
+  
 
             PlayerMove.Globals.CamOnfloor = true;
             PlayerMove.Globals.CamFloorY = SaveY;
             Debug.Log(new Vector3(SaveX, SaveY));                                                               //add anything that need to be reset after respawn
-            GetComponent<playerEnergy>().energy = 1;
+            
+            GetComponent<playerHealth>().dead = true;
             GetComponent<playerHealth>().playerHealthstat = GetComponent<playerHealth>().myHealth;
             GetComponent<playerHealth>().invinsibleTimer = GetComponent<playerHealth>().invinsibleT;
             foreach (GameObject item in itemList)
@@ -125,20 +128,7 @@ public class checkManager : MonoBehaviour
             
 
             StartCoroutine(respawnBack());
-            if (!first)
-            {
-                PlayerAnimator.SetBool("isSitting", true);
-                PlayerAnimator.SetBool("isStanding", false);
-                PlayerAnimator.SetBool("isWalking", false);
-                PlayerAnimator.SetBool("isJumpDown", false);
-                PlayerAnimator.SetBool("isJumpUp", false);
-                GetComponent<PlayerMove>().disableMove = true;
-                GetComponent<playerEnergy>().disableEner = true;
-                option = 1;
-                duringRes = true;
-                mybody.velocity = Vector3.zero;
-                createOptions(1f);
-            }
+
             if (first)
             {
                 PlayerAnimator.SetBool("isSitting", false);
@@ -248,12 +238,29 @@ public class checkManager : MonoBehaviour
     }*/
     IEnumerator respawnBack()
     {
-        yield return new WaitForSecondsRealtime(1);
+        
+        transform.position = deadPos;
+        blackAIM.SetTrigger("isBlackOut");
+        yield return new WaitForSecondsRealtime(1.5f);
         transform.position = new Vector3(SaveX, SaveY);
         transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f);
-
-
-
+        GetComponent<playerHealth>().dead = false;
+        GetComponent<playerEnergy>().energy = 1;
+        SceneTransition.Globals.switchToBound = saveBound;
+        if (!first)
+        {
+            PlayerAnimator.SetBool("isSitting", true);
+            PlayerAnimator.SetBool("isStanding", false);
+            PlayerAnimator.SetBool("isWalking", false);
+            PlayerAnimator.SetBool("isJumpDown", false);
+            PlayerAnimator.SetBool("isJumpUp", false);
+            GetComponent<PlayerMove>().disableMove = true;
+            GetComponent<playerEnergy>().disableEner = true;
+            option = 1;
+            duringRes = true;
+            mybody.velocity = Vector3.zero;
+            createOptions(0f);
+        }
     }
 
     private void createOptions(float upDis)

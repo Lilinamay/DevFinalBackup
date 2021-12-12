@@ -13,6 +13,8 @@ public class playerHealth : MonoBehaviour
     public float invinsibleTimer = 0;
     public float invinsibleT = 0;
 
+    public bool dead = false;
+
 
     public Image health1;
     public Image health2;
@@ -25,7 +27,6 @@ public class playerHealth : MonoBehaviour
     SpriteRenderer myRenderer;
     Rigidbody2D mybody;
 
-    public Animator blackAIM;
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +47,7 @@ public class playerHealth : MonoBehaviour
             respawned = true;
             respawnBack = true;
             mybody.velocity = Vector3.zero;
-            blackAIM.SetTrigger("isBlackOut");
+
         }
 
 
@@ -121,7 +122,7 @@ public class playerHealth : MonoBehaviour
     void healthUI()
     {
         
-        if (playerHealthstat == 0)
+        if (playerHealthstat == 0 || dead)
         {
             health1.color = new Color(health1.color.r, health1.color.g, health1.color.b, lostA);
             health2.color = new Color(health2.color.r, health2.color.g, health2.color.b, lostA);
@@ -149,7 +150,7 @@ public class playerHealth : MonoBehaviour
             health3.color = new Color(health3.color.r, health3.color.g, health3.color.b, 1);
             health4.color = new Color(health4.color.r, health4.color.g, health4.color.b, lostA);
         }
-        if (playerHealthstat == 4)
+        if (playerHealthstat == 4 && !dead)
         {
             health1.color = new Color(health1.color.r, health1.color.g, health1.color.b, 1);
             health2.color = new Color(health2.color.r, health2.color.g, health2.color.b, 1);

@@ -83509,6 +83509,7 @@ MonoBehaviour:
   sendBack: {fileID: 848391423}
   player: {fileID: 1666076227}
   freezeScreen: {fileID: 453192031}
+  blackAnimator: {fileID: 794808289}
 --- !u!212 &1193095976
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -115847,7 +115848,6 @@ MonoBehaviour:
   health4: {fileID: 1448890125}
   lostA: 0.3
   freezeScreen: {fileID: 453192031}
-  blackAIM: {fileID: 794808289}
 --- !u!114 &1666076233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115878,6 +115878,7 @@ MonoBehaviour:
   homemanage: {fileID: 392288612}
   UIMove: 1.05
   textColor: 0
+  blackAIM: {fileID: 794808289}
 --- !u!114 &1666076234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119057,6 +119058,7 @@ MonoBehaviour:
   sendBack: {fileID: 2104361163}
   player: {fileID: 1666076227}
   freezeScreen: {fileID: 453192031}
+  blackAnimator: {fileID: 794808289}
 --- !u!212 &1705827894
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -122639,6 +122641,7 @@ MonoBehaviour:
   sendBack: {fileID: 1769554076}
   player: {fileID: 1666076227}
   freezeScreen: {fileID: 453192031}
+  blackAnimator: {fileID: 794808289}
 --- !u!212 &1754535870
 SpriteRenderer:
   m_ObjectHideFlags: 0
