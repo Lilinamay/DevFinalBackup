@@ -64,7 +64,7 @@ public class enemyBehavior : MonoBehaviour
             {
                 getHit = true;
                 enemyHealth--;
-                mycamera.GetComponent<camShake>().Startshake();
+                mycamera.GetComponent<camShake>().Startshake(0.05f, 0.7f, 0.8f);
 
                 attackedTimer = 0.3F;
                 if (pEnergy.energy < 1)

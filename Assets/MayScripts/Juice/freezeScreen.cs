@@ -23,6 +23,6 @@ public class freezeScreen : MonoBehaviour
         Time.timeScale = 1.0f;
         //yield return new WaitUntil 
         //FindObjectOfType<startshake>().
-        FindObjectOfType<camShake>().Startshake();
+        FindObjectOfType<camShake>().Startshake(0.12f,0.7f,0.8f);
     }
 }

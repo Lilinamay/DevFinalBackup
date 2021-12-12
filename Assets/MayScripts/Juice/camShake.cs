@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class camShake : MonoBehaviour
 {
-    public float duration = 1.0f;
-    public float magnitude = 1.0f;
-    public float smoothR = 0.5f;
+    //public float duration = 1.0f;
+    //public float magnitude = 1.0f;
+    //public float smoothR = 0.5f;
 
 
-    public void Startshake()
+    public void Startshake(float duration, float magnitude, float smoothR)
     {
-        StartCoroutine(Shake());
+        StartCoroutine(Shake(duration,magnitude, smoothR));
     }
 
-    IEnumerator Shake()
+    IEnumerator Shake(float duration, float magnitude, float smoothR)
     {
         float elapsed = 0.0f;
 
