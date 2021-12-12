@@ -13,6 +13,7 @@ public class enemyBehavior : MonoBehaviour
     public GameObject player;
     playerEnergy pEnergy;
     public bool getHit;
+    public GameObject mycamera;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class enemyBehavior : MonoBehaviour
         myHealth = enemyHealth;
         myRenderer = GetComponent<SpriteRenderer>();
         pEnergy = player.GetComponent<playerEnergy>();
+
     }
 
     // Update is called once per frame
@@ -62,6 +64,8 @@ public class enemyBehavior : MonoBehaviour
             {
                 getHit = true;
                 enemyHealth--;
+                mycamera.GetComponent<camShake>().Startshake();
+
                 attackedTimer = 0.3F;
                 if (pEnergy.energy < 1)
                 {

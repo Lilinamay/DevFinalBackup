@@ -17520,7 +17520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5dd57364cbf462e9985639a335900a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 4
+  enemySpeed: 3.2
   enemyMaxDistance: 4
 --- !u!114 &269172996
 MonoBehaviour:
@@ -53846,7 +53846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5dd57364cbf462e9985639a335900a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 4
+  enemySpeed: 3.2
   enemyMaxDistance: 4
 --- !u!114 &806342796
 MonoBehaviour:
@@ -55342,7 +55342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5dd57364cbf462e9985639a335900a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 4
+  enemySpeed: 3.2
   enemyMaxDistance: 6
 --- !u!114 &834639645
 MonoBehaviour:
@@ -59653,7 +59653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5dd57364cbf462e9985639a335900a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 4
+  enemySpeed: 3.2
   enemyMaxDistance: 6
 --- !u!114 &885737468
 MonoBehaviour:
@@ -78178,7 +78178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5dd57364cbf462e9985639a335900a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 4
+  enemySpeed: 3.2
   enemyMaxDistance: 6
 --- !u!114 &1125741618
 MonoBehaviour:
@@ -117755,7 +117755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5dd57364cbf462e9985639a335900a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 4
+  enemySpeed: 3.2
   enemyMaxDistance: 6
 --- !u!114 &1684232292
 MonoBehaviour:
@@ -141821,7 +141821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5dd57364cbf462e9985639a335900a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 4
+  enemySpeed: 3.2
   enemyMaxDistance: 7
 --- !u!114 &2030698774
 MonoBehaviour:

@@ -46,7 +46,7 @@ public class playerAttack : MonoBehaviour
                     meleeBox.SetActive(true);
                     meleeAnim.SetTrigger("meleeAttack");
                     playerAnim.SetTrigger("meleeAttack");
-                playerAudio.Play();
+                    playerAudio.Play();
                     countTime = true;
                     
                 }

@@ -8,7 +8,7 @@ public class camShake : MonoBehaviour
     public float magnitude = 1.0f;
     public float smoothR = 0.5f;
 
-    [SerializeField] SpriteRenderer playerRenderer;
+
     public void Startshake()
     {
         StartCoroutine(Shake());
