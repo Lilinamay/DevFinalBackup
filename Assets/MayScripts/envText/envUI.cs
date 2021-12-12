@@ -92,10 +92,18 @@ public class envUI : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
             //audioManager.Instance.PlaySound(audioManager.Instance.tutorialSound, audioManager.Instance.tutorialVolume);
-            topUI.enabled = true;
-            botUI.enabled = true;
-            //text.text = inform;
-            //FindObjectOfType<checkManager>().itemList.Add(gameObject);
+            StartCoroutine(startEnvImage());
+
         }
     }
+
+    IEnumerator startEnvImage()
+    {
+        yield return new WaitForSecondsRealtime(1.5f);
+        topUI.enabled = true;
+        botUI.enabled = true;
+
+    }
+
+
 }

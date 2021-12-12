@@ -88,10 +88,16 @@ public class envText : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            //audioManager.Instance.PlaySound(audioManager.Instance.tutorialSound, audioManager.Instance.tutorialVolume);
-            text.enabled = true;
-            text.text = inform;
-            //FindObjectOfType<checkManager>().itemList.Add(gameObject);
+
+            StartCoroutine(startEnvText());
         }
+    }
+
+    IEnumerator startEnvText()
+    {
+        yield return new WaitForSecondsRealtime(1.5f);
+        text.enabled = true;
+        text.text = inform;
+
     }
 }
