@@ -116008,7 +116008,7 @@ MonoBehaviour:
   disableEner: 0
   energyUI: {fileID: 607774006}
   bullet: {fileID: 5487429252565645576, guid: ff06472b2d3634e538e4a2b8d0615044, type: 3}
-  shootSpeed: 9
+  shootSpeed: 15
   playerAnimator: {fileID: 1666076228}
   chargeAnimator: {fileID: 1624084187}
 --- !u!114 &1666076232

@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OriginPos: {x: 0, y: 0, z: 0}
-  maxDis: 11
+  maxDis: 14
 --- !u!95 &1302467060402608122
 Animator:
   serializedVersion: 3

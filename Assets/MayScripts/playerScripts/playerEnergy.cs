@@ -48,7 +48,7 @@ public class playerEnergy : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.A))
         {
-            if (timer < 0.15f && shotCD <=0)
+            if (timer < 0.18f && shotCD <=0)
             {
                 Debug.Log("charged Shot");
                 energy -= enToCharge;
@@ -78,7 +78,7 @@ public class playerEnergy : MonoBehaviour
             toHealth = false;
             timer = 0;
         }
-        if (timer > 0.15f && !hasCharged)
+        if (timer > 0.18f && !hasCharged && GetComponent<playerHealth>().playerHealthstat < GetComponent<playerHealth>().myHealth)
         {
 
             chargeAnimator.SetTrigger("isCharging");
