@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DiaPlotChanger : MonoBehaviour
 {
-    bool changePloted = false;
+    public bool changePloted = false;
     Dialogue dialogue;
     public int newPlot;
     public GameObject plotmanager;
@@ -27,6 +27,7 @@ public class DiaPlotChanger : MonoBehaviour
                 {
                     plotmanager.GetComponent<plotNumber>().myPlot = newPlot;
                 }
+                changePloted = true;
 
             }
         }
