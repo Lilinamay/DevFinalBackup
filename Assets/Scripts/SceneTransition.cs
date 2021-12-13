@@ -50,7 +50,7 @@ public class SceneTransition : MonoBehaviour
                 goUp = true;
                 
             }
-            pCheck.respawnEnemy();
+            
             StartCoroutine(transport());
             StartCoroutine(disableWalk());
 
@@ -62,6 +62,7 @@ public class SceneTransition : MonoBehaviour
             
             
             yield return new WaitForSecondsRealtime(1f);
+            pCheck.respawnEnemy();
             goUp = false;
             playerAnimator.SetBool("isJumpUp", false);
             playerAnimator.SetBool("isJumpDown", false);
