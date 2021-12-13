@@ -7,6 +7,7 @@ public class playerEnergy : MonoBehaviour
     public float enToCharge = 0.25f;
     public float enToLife = 0.25f;
     public float timer = 0;
+    bool hasCharged = false;
     bool toHealth = false;
 
     public bool disableEner = false;
@@ -16,6 +17,7 @@ public class playerEnergy : MonoBehaviour
     public float shootSpeed;
     float shotCD = 0;
     public Animator playerAnimator;
+    public Animator chargeAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -42,10 +44,11 @@ public class playerEnergy : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             timer += Time.deltaTime;
+            
         }
         if (Input.GetKeyUp(KeyCode.A))
         {
-            if (timer < 1 && shotCD <=0)
+            if (timer < 0.15f && shotCD <=0)
             {
                 Debug.Log("charged Shot");
                 energy -= enToCharge;
@@ -71,8 +74,15 @@ public class playerEnergy : MonoBehaviour
                 //resetA = true;
 
             }
+            hasCharged = false;
             toHealth = false;
             timer = 0;
+        }
+        if (timer > 0.15f && !hasCharged)
+        {
+
+            chargeAnimator.SetTrigger("isCharging");
+            hasCharged = true;
         }
 
         if (timer > 1 && GetComponent<playerHealth>().playerHealthstat < GetComponent<playerHealth>().myHealth && !toHealth)
