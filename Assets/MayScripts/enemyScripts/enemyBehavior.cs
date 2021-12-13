@@ -67,7 +67,7 @@ public class enemyBehavior : MonoBehaviour
                 mycamera.GetComponent<camShake>().Startshake(0.05f, 0.7f, 0.8f);
 
                 attackedTimer = 0.3F;
-                if (pEnergy.energy < 1)
+                if (pEnergy.energy <=0.9f)
                 {
                     pEnergy.energy += 0.1f;
                 }

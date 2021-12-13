@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +7,7 @@ public class playerEnergy : MonoBehaviour
     public float enToCharge = 0.25f;
     public float enToLife = 0.25f;
     public float timer = 0;
+    bool toHealth = false;
 
     public bool disableEner = false;
 
@@ -67,18 +66,25 @@ public class playerEnergy : MonoBehaviour
                 newBall.transform.localPosition = new Vector3(dir * 1f, -0.1f); ///local position relative to player
                 newBall.GetComponent<Rigidbody2D>().velocity = new Vector3(gameObject.GetComponent<Rigidbody2D>().velocity.x + dir * shootSpeed, 0f);  //ball move
                 shotCD = 1;
+                
                 //hasShoot = true;
-               //resetA = true;
+                //resetA = true;
 
             }
-            if (timer > 1 && GetComponent<playerHealth>().playerHealthstat< GetComponent<playerHealth>().myHealth)
-            {
-                Debug.Log("get Health");
-                energy -= enToLife;
-                GetComponent<playerHealth>().playerHealthstat++;
-            }
+            toHealth = false;
             timer = 0;
         }
 
+        if (timer > 1 && GetComponent<playerHealth>().playerHealthstat < GetComponent<playerHealth>().myHealth && !toHealth)
+        {
+            toHealth = true;
+            Debug.Log("get Health");
+            energy -= enToLife;
+            GetComponent<playerHealth>().playerHealthstat++;
+        }
+
     }
+
+
+
 }
