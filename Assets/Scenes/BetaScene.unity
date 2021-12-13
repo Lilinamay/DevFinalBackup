@@ -116099,6 +116099,8 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 256
+  dashParticle: {fileID: 593402863}
+  dashRenderer: {fileID: 593402865}
 --- !u!50 &1666076235
 Rigidbody2D:
   serializedVersion: 4

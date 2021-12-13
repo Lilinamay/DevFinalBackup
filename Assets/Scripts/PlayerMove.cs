@@ -51,6 +51,9 @@ public class PlayerMove : MonoBehaviour
 
     public LayerMask layerMask;
 
+    public GameObject dashParticle;
+    public SpriteRenderer dashRenderer;
+
 
     // Start is called before the first frame update
     void Start()
@@ -302,11 +305,24 @@ public class PlayerMove : MonoBehaviour
     IEnumerator Dash(float dir)    //dash codes
     {
         isDashing = true;
+        dashParticle.SetActive(true);
+        if (dir < 0)
+        {
+            dashRenderer.flipX = true;
+            
+        }
+        else
+        {
+            dashRenderer.flipX = false;
+            
+        }
+
         myBody.velocity = new Vector2(dashSpeed * dir, 0f);
         
         float gravity = myBody.gravityScale;
         myBody.gravityScale = 0;
         yield return new WaitForSeconds(0.16f);
+        dashParticle.SetActive(false);
         myBody.velocity = new Vector2(0f, 0f);
         isDashing = false;
         myBody.gravityScale = gravity;
