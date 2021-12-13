@@ -373,6 +373,20 @@ public class checkManager : MonoBehaviour
         hometrans.goHome();
     }
 
+    public void respawnEnemy()
+    {
+        foreach (GameObject item in itemList)
+        {
+            if (item.tag == "enemy")
+            {
+                item.SetActive(true);
+                item.GetComponent<enemyBehavior>().added = false;
+                item.GetComponent<enemyBehavior>().enemyHealth = item.GetComponent<enemyBehavior>().myHealth;
+                item.GetComponent<SpriteRenderer>().color = Color.white;
+            }
+        }
+    }
+
 
 
 

@@ -16,6 +16,7 @@ public class SceneTransition : MonoBehaviour
     float upVelocity;
     public Animator playerAnimator;
     PlayerMove pMove;
+    checkManager pCheck;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,7 @@ public class SceneTransition : MonoBehaviour
         canTrans = true;
         goUp = false;
         pMove = player.GetComponent<PlayerMove>();
+        pCheck = player.GetComponent<checkManager>();
         upVelocity = 15f;
     }
 
@@ -48,6 +50,7 @@ public class SceneTransition : MonoBehaviour
                 goUp = true;
                 
             }
+            pCheck.respawnEnemy();
             StartCoroutine(transport());
             StartCoroutine(disableWalk());
 
