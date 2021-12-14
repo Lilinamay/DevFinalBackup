@@ -21,7 +21,7 @@ public class NPCTrigger : MonoBehaviour
     {
         if(!listenH && listen)
         {
-            Invoke("listenNPC", 0.3f);
+            Invoke("listenNPC", 0.5f);
             listenH = true;
         }
 

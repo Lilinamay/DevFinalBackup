@@ -72,7 +72,7 @@ public class checkManager : MonoBehaviour
         {
             if (!triggerH )
             {
-                Invoke("sit", 0.3f);
+                Invoke("sit", 1);
                 triggerH = true;
             }
 
