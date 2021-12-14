@@ -58,7 +58,7 @@ public class HomeChair : MonoBehaviour
         {
             if (!triggerH)
             {
-                Invoke("sit", 1);
+                Invoke("sit", 0.3f);
                 triggerH = true;
             }
 

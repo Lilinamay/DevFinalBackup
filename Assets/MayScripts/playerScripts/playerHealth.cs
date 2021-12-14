@@ -29,6 +29,7 @@ public class playerHealth : MonoBehaviour
 
     public GameObject player;
     PlayerMove pMove;
+    playerAttack pAttack;
 
 
     // Start is called before the first frame update
@@ -38,6 +39,7 @@ public class playerHealth : MonoBehaviour
         myRenderer = GetComponent<SpriteRenderer>();
         mybody = GetComponent<Rigidbody2D>();
         pMove = player.GetComponent<PlayerMove>();
+        pAttack = GetComponent<playerAttack>();
     }
 
     // Update is called once per frame
@@ -68,6 +70,7 @@ public class playerHealth : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(0f);
         pMove.disableMove = true;
+        pAttack.canAttack = false;
         StartCoroutine(enableWalk());
     }
 
@@ -75,6 +78,7 @@ public class playerHealth : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(2.0f);
         pMove.disableMove = false;
+        pAttack.canAttack = true;
     }
 
     private void OnTriggerStay2D(Collider2D collision)

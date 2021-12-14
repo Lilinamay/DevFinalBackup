@@ -99,6 +99,7 @@ public class enemyBehavior : MonoBehaviour
                 enemyHealth--;
                 myRenderer.color = Color.red;
                 StartCoroutine(changeColor());
+                mycamera.GetComponent<camShake>().Startshake(0.05f, 0.7f, 0.8f);
                 rangedTimer = 0.5f;
             }
         }
