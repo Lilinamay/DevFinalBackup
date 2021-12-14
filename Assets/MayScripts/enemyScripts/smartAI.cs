@@ -60,7 +60,7 @@ public class smartAI : MonoBehaviour
         Timer += Time.deltaTime;
         if (Timer >= 3)
         {
-            randomInt = Random.Range(0, 3);
+            randomInt = Random.Range(0, 4);
             aiDest.target = points[randomInt].transform;
             Timer = 0;
         }
