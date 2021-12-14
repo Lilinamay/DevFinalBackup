@@ -53,6 +53,7 @@ public class playerEnergy : MonoBehaviour
                 Debug.Log("charged Shot");
                 energy -= enToCharge;
                 playerAnimator.SetTrigger("rangeAttack");
+                Audiomanager.Instance.PlaySound(Audiomanager.Instance.chargeAttackSound, Audiomanager.Instance.chargeAttackVolume);
                 GameObject newBall = Instantiate(bullet, transform.position, transform.rotation); //default to player's position/rotation
                 newBall.transform.SetParent(gameObject.transform);
                 newBall.GetComponent<bulletBehavior>().OriginPos = gameObject.transform.position;

@@ -48,6 +48,7 @@ public class PlayerMove : MonoBehaviour
 
     public bool faceR;
     public bool faceL;
+    public bool canLand;
 
     public LayerMask layerMask;
 
@@ -152,6 +153,8 @@ public class PlayerMove : MonoBehaviour
             jumpTimer -= Time.deltaTime;            //reset jumpTimer
         }
         Debug.Log("jumpTimer:" + jumpTimer);*/
+
+        
 
     }
 
@@ -363,6 +366,13 @@ public class PlayerMove : MonoBehaviour
             Debug.Log("playerRAYCAST:" +hit.collider.name);
             if (hit.collider.tag == "floor")
             {
+                if (myBody.velocity.y < 0 && canLand && !onFloor)
+                {
+                    canLand = false;
+                    Audiomanager.Instance.PlaySound(Audiomanager.Instance.lightLand, Audiomanager.Instance.lightLandVolume);
+                    StartCoroutine(LandCd());
+                   
+                }
                 Debug.Log("player: floor below, can jump");
                 onFloor = true;
 
@@ -375,6 +385,13 @@ public class PlayerMove : MonoBehaviour
             }
             else if(hit.collider.tag == "platform")
             {
+                if (myBody.velocity.y < 0 && canLand)
+                {
+                    canLand = false;
+                    Audiomanager.Instance.PlaySound(Audiomanager.Instance.lightLand, Audiomanager.Instance.lightLandVolume);
+                    StartCoroutine(LandCd());
+
+                }
                 onFloor = true;
                 canDash = true;
                 onPlatform = true;
@@ -407,7 +424,12 @@ public class PlayerMove : MonoBehaviour
             //canDash = true;
         }
 
+        IEnumerator LandCd()
+        {
+            yield return new WaitForSecondsRealtime(0.2f);
+            canLand = true;
 
+        }
 
     }
 

@@ -47,7 +47,7 @@ public class playerAttack : MonoBehaviour
                     meleeBox.SetActive(true);
                     meleeAnim.SetTrigger("meleeAttack");
                     playerAnim.SetTrigger("meleeAttack");
-                    playerAudio.Play();
+                    //playerAudio.Play();
                     countTime = true;
                     
                 }
@@ -75,6 +75,8 @@ public class playerAttack : MonoBehaviour
         {
             if (!startA)
             {
+                Audiomanager.Instance.PlaySound(Audiomanager.Instance.playerAttackSound, Audiomanager.Instance.PlayerAttackVolume);
+
                 if (GetComponent<PlayerMove>().faceR)
                 {
                     meleeRenderer.flipX = false;
