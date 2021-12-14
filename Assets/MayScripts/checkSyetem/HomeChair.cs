@@ -74,7 +74,7 @@ public class HomeChair : MonoBehaviour
             PlayerAnimator.SetBool("isWalking", false);
             player.GetComponent<PlayerMove>().disableMove = true;
             player.GetComponent<playerEnergy>().disableEner = true;
-            GetComponent<playerAttack>().canAttack = false;
+            player.GetComponent<playerAttack>().canAttack = false;
             //player sit
             Debug.Log("new options");
             option = 1;
@@ -134,7 +134,7 @@ public class HomeChair : MonoBehaviour
                     Debug.Log("leave");
                     player.GetComponent<PlayerMove>().disableMove = false;
                     player.GetComponent<playerEnergy>().disableEner = false;
-                    GetComponent<playerAttack>().canAttack = true;
+                    player.GetComponent<playerAttack>().canAttack = true;
                     //duringRes = false;
                     option = 0;
 
