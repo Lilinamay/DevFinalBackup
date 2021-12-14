@@ -102,7 +102,7 @@ public class enemyBMove : MonoBehaviour
         if (dashCD <= 4 && dashCD >= 2)
         {
             //DASH
-            enemyBody.velocity = new Vector2(enemySpeed * 2, 0);
+            enemyBody.velocity = new Vector2(enemySpeed * 3, 0);
             EnemyBAnimator.SetBool("canCharge", false);
             EnemyBAnimator.SetBool("canAttack", true);
         }
