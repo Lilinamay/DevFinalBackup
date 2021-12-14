@@ -21,6 +21,7 @@ public class playerAttack : MonoBehaviour
     public Animator meleeAnim;
     public Animator playerAnim;
     public AudioSource playerAudio;
+    public bool canAttack;
 
     public float rotation;
     // Start is called before the first frame update
@@ -38,7 +39,7 @@ public class playerAttack : MonoBehaviour
         distanceX = gameObject.transform.position.x - meleeBox.transform.position.x;
         distanceY = gameObject.transform.position.y - meleeBox.transform.position.y;
 
-            if (Input.GetKeyDown(KeyCode.X))
+            if (Input.GetKeyDown(KeyCode.X)&& canAttack)
             {
                 if(!meleeBox.activeSelf && timer == 0)
                 {

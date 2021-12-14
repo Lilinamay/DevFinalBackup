@@ -275,6 +275,7 @@ public class checkManager : MonoBehaviour
             PlayerAnimator.SetBool("isSitting", true);
             PlayerAnimator.SetBool("isJumpDown", false);
             PlayerAnimator.SetBool("isJumpUp", false);
+            GetComponent<playerAttack>().canAttack = false;
             GetComponent<PlayerMove>().disableMove = true;
             GetComponent<playerEnergy>().disableEner = true;
             //player sit
@@ -338,6 +339,7 @@ public class checkManager : MonoBehaviour
                 {
                     Debug.Log("leave");
                     GetComponent<PlayerMove>().disableMove = false;
+                    GetComponent<playerAttack>().canAttack = true;
                     GetComponent<playerEnergy>().disableEner = false;
                     duringRes = false;
                     option = 0;
