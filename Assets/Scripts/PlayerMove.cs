@@ -162,6 +162,12 @@ public class PlayerMove : MonoBehaviour
             PlayerAudioSource.Stop();
         }
 
+        if (Globals.stopWalkSound)
+        {
+            PlayerAudioSource.Stop();
+            Globals.stopWalkSound = false;
+        }
+
     }
 
     void CheckKeys()
@@ -471,6 +477,7 @@ public class PlayerMove : MonoBehaviour
         public static float CamFloorY;
         public static int playerY;
         public static bool ApplyV = true;
+        public static bool stopWalkSound = false;
 
     }
 

@@ -35,6 +35,7 @@ public class riverBehavior : MonoBehaviour
         if(collision.name == "Player")
         {
             //playerHealth--;
+            PlayerMove.Globals.stopWalkSound = true;
 
             Audiomanager.Instance.PlaySound(Audiomanager.Instance.spikeSound, Audiomanager.Instance.spikeVolume);
             playerRenderer.color = Color.red;

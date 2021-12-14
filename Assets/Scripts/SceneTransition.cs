@@ -62,6 +62,7 @@ public class SceneTransition : MonoBehaviour
             
             
             yield return new WaitForSecondsRealtime(1f);
+            PlayerMove.Globals.stopWalkSound = true;
             pCheck.respawnEnemy();
             goUp = false;
             playerAnimator.SetBool("isJumpUp", false);

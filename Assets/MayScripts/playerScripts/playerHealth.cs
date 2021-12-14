@@ -27,6 +27,8 @@ public class playerHealth : MonoBehaviour
     SpriteRenderer myRenderer;
     Rigidbody2D mybody;
 
+    public GameObject player;
+
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +45,7 @@ public class playerHealth : MonoBehaviour
         Debug.Log("timer" + invinsibleTimer);
         if (playerHealthstat <= 0)              //death
         {
+            PlayerMove.Globals.stopWalkSound = true;
             respawn = true;
             //respawned = true;
             respawnBack = true;
@@ -63,6 +66,7 @@ public class playerHealth : MonoBehaviour
         {
             if (invinsibleTimer <= 0)
             {
+                PlayerMove.Globals.stopWalkSound = true;
                 Audiomanager.Instance.PlaySound(Audiomanager.Instance.playerTakeDamageSound, Audiomanager.Instance.playerTakeDamageVolume);
                 playerHealthstat--;                                             //-health, cameraShake maybe?
                 invinsibleTimer = invinsibleT;
