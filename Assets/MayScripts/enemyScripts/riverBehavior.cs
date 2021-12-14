@@ -12,6 +12,7 @@ public class riverBehavior : MonoBehaviour
     bool respawnBack;
     Rigidbody2D mybody;
     playerHealth playerhealth;
+    PlayerMove pMove;
 
     public Animator blackAnimator;
 
@@ -22,6 +23,7 @@ public class riverBehavior : MonoBehaviour
         playerRenderer = player.GetComponent<SpriteRenderer>();
         respawnBack = player.GetComponent<playerHealth>().respawnBack;
         mybody = player.GetComponent<Rigidbody2D>();
+        pMove = player.GetComponent<PlayerMove>();
     }
 
     // Update is called once per frame
@@ -35,6 +37,7 @@ public class riverBehavior : MonoBehaviour
         if(collision.name == "Player")
         {
             //playerHealth--;
+            StartCoroutine(disableWalk());
             PlayerMove.Globals.stopWalkSound = true;
 
             Audiomanager.Instance.PlaySound(Audiomanager.Instance.spikeSound, Audiomanager.Instance.spikeVolume);
@@ -44,6 +47,20 @@ public class riverBehavior : MonoBehaviour
             freezeScreen.GetComponent<freezeScreen>().stop();
 
         }
+        
+    }
+
+    IEnumerator disableWalk()
+    {
+        yield return new WaitForSecondsRealtime(0f);
+        pMove.disableMove = true;
+        StartCoroutine(enableWalk());
+    }
+
+    IEnumerator enableWalk()
+    {
+        yield return new WaitForSecondsRealtime(2.0f);
+        pMove.disableMove = false;
     }
 
     IEnumerator changeColor()

@@ -28,6 +28,7 @@ public class playerHealth : MonoBehaviour
     Rigidbody2D mybody;
 
     public GameObject player;
+    PlayerMove pMove;
 
 
     // Start is called before the first frame update
@@ -36,6 +37,7 @@ public class playerHealth : MonoBehaviour
         myHealth = playerHealthstat;
         myRenderer = GetComponent<SpriteRenderer>();
         mybody = GetComponent<Rigidbody2D>();
+        pMove = player.GetComponent<PlayerMove>();
     }
 
     // Update is called once per frame
@@ -45,6 +47,7 @@ public class playerHealth : MonoBehaviour
         Debug.Log("timer" + invinsibleTimer);
         if (playerHealthstat <= 0)              //death
         {
+            StartCoroutine(disableWalk());
             PlayerMove.Globals.stopWalkSound = true;
             respawn = true;
             //respawned = true;
@@ -53,11 +56,25 @@ public class playerHealth : MonoBehaviour
 
         }
 
+        
 
-        if(invinsibleTimer > 0)
+        if (invinsibleTimer > 0)
         {
             invinsibleTimer -= Time.deltaTime;
         }
+    }
+
+    IEnumerator disableWalk()
+    {
+        yield return new WaitForSecondsRealtime(0f);
+        pMove.disableMove = true;
+        StartCoroutine(enableWalk());
+    }
+
+    IEnumerator enableWalk()
+    {
+        yield return new WaitForSecondsRealtime(2.0f);
+        pMove.disableMove = false;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
