@@ -136,6 +136,7 @@ public class checkManager : MonoBehaviour
                 PlayerAnimator.SetBool("isWalking", false);
                 PlayerAnimator.SetBool("isJumpDown", false);
                 PlayerAnimator.SetBool("isJumpUp", false);
+                GetComponent<playerHealth>().respawnBack = false;
             }
             GetComponent<playerHealth>().respawn = false;
             /////////////////
@@ -176,6 +177,7 @@ public class checkManager : MonoBehaviour
             checkered = false;
             saveRecord = false;
             saved = false;
+            GetComponent<playerHealth>().respawnBack = false;
             if (!duringRes)
             {
                 option = 0;

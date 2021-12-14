@@ -44,7 +44,7 @@ public class playerHealth : MonoBehaviour
         if (playerHealthstat <= 0)              //death
         {
             respawn = true;
-            respawned = true;
+            //respawned = true;
             respawnBack = true;
             mybody.velocity = Vector3.zero;
 

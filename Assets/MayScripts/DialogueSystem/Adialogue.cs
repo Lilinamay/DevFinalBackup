@@ -110,7 +110,7 @@ public class Adialogue : MonoBehaviour
         triggered = false;
         GetComponent<NPCTrigger>().listened = false;
         GetComponent<NPCTrigger>().convTriggered = false;
-        if(plotNumber.Globals.plotNum == 1)
+        if(plotNumber.Globals.plotNum == 2)
         {
             endCG.enabled = true;
         }

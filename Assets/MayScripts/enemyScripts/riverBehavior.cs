@@ -11,13 +11,14 @@ public class riverBehavior : MonoBehaviour
     SpriteRenderer playerRenderer;
     bool respawnBack;
     Rigidbody2D mybody;
+    playerHealth playerhealth;
 
     public Animator blackAnimator;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerHealth = player.GetComponent<playerHealth>().playerHealthstat;
+        playerhealth = player.GetComponent<playerHealth>();
         playerRenderer = player.GetComponent<SpriteRenderer>();
         respawnBack = player.GetComponent<playerHealth>().respawnBack;
         mybody = player.GetComponent<Rigidbody2D>();
@@ -46,13 +47,13 @@ public class riverBehavior : MonoBehaviour
 
     IEnumerator changeColor()
     {
-        if (playerHealth > 1)
+        if (playerhealth.playerHealthstat > 1)
         {
             blackAnimator.SetTrigger("isBlackOut");
         }
         yield return new WaitForSecondsRealtime(1f);
         playerRenderer.color = Color.white;
-        if (playerHealth >1 )
+        if (playerhealth.playerHealthstat > 1 )
         {
             player.transform.position = sendBack.position;
         }
