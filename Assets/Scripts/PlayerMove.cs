@@ -21,8 +21,8 @@ public class PlayerMove : MonoBehaviour
     bool hasJumpedOnce;
     bool checkOnFloor;
 
-    
-    
+
+    public Animator BlackAnimator;
 
     public float npcPosX;
     float myPosX;
@@ -64,6 +64,7 @@ public class PlayerMove : MonoBehaviour
         myBody = gameObject.GetComponent<Rigidbody2D>();
         myRenderer = gameObject.GetComponent<SpriteRenderer>();
         jumpKeyReleased = true;
+        BlackAnimator.SetTrigger("isBlackOut");
         
     }
 
