@@ -29,6 +29,7 @@ public class NPCTrigger : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                Audiomanager.Instance.PlaySound(Audiomanager.Instance.dialogSound, Audiomanager.Instance.dialogVolume);
                 convTriggered = true;
                 Debug.Log("convTriggered");
                 player.GetComponent<PlayerMove>().disableMove = true;

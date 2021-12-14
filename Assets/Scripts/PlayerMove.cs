@@ -36,6 +36,8 @@ public class PlayerMove : MonoBehaviour
 
     public Animator PlayerAnimator;
 
+    public AudioSource PlayerAudioSource;
+
 
     //public float test = 3;
     public float rayDis = 1;
@@ -99,6 +101,7 @@ public class PlayerMove : MonoBehaviour
         }
         if (!onFloor)
         {
+            PlayerAudioSource.Stop();
             jumpY = transform.position.y;
             Globals.jumpDistance = jumpY - onfloorY;
         }
@@ -154,7 +157,10 @@ public class PlayerMove : MonoBehaviour
         }
         Debug.Log("jumpTimer:" + jumpTimer);*/
 
-        
+        if (isDashing)
+        {
+            PlayerAudioSource.Stop();
+        }
 
     }
 
@@ -164,6 +170,14 @@ public class PlayerMove : MonoBehaviour
 
         if (Input.GetKey(KeyCode.RightArrow) && !isDashing)     //left right movement
         {
+            if (onFloor)
+            {
+                if (!PlayerAudioSource.isPlaying)
+                {
+
+                    PlayerAudioSource.Play();
+                }
+            }
             myRenderer.flipX = false;
             PlayerAnimator.SetBool("isWalking", true);
             PlayerAnimator.SetBool("isStanding", false);
@@ -172,6 +186,14 @@ public class PlayerMove : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.LeftArrow) && !isDashing)
         {
+            if (onFloor)
+            {
+                if (!PlayerAudioSource.isPlaying)
+                {
+
+                    PlayerAudioSource.Play();
+                }
+            }
             myRenderer.flipX = true;
             PlayerAnimator.SetBool("isWalking", true);
             PlayerAnimator.SetBool("isStanding", false);
@@ -184,6 +206,8 @@ public class PlayerMove : MonoBehaviour
             PlayerAnimator.SetBool("isWalking", false);
             PlayerAnimator.SetBool("isStanding", true);
         }
+
+        
 
         if (Input.GetKeyUp(KeyCode.Z))   //fall when jump key released
         {
@@ -199,6 +223,7 @@ public class PlayerMove : MonoBehaviour
             if (onFloor)
             {
                 myBody.velocity = new Vector3(0, myBody.velocity.y);
+                PlayerAudioSource.Stop();
             }
             else
             {
@@ -211,6 +236,7 @@ public class PlayerMove : MonoBehaviour
             if (onFloor)
             {
                 myBody.velocity = new Vector3(0, myBody.velocity.y);
+                PlayerAudioSource.Stop();
             }
             else
             {
@@ -302,12 +328,14 @@ public class PlayerMove : MonoBehaviour
     void HandleLRMovement(float dir)     //left right movement
     {
         myBody.velocity = new Vector3(dir, myBody.velocity.y);
+        
     }
 
 
     IEnumerator Dash(float dir)    //dash codes
     {
         isDashing = true;
+        Audiomanager.Instance.PlaySound(Audiomanager.Instance.dashSound, Audiomanager.Instance.dashVolume);
         dashParticle.SetActive(true);
         if (dir < 0)
         {

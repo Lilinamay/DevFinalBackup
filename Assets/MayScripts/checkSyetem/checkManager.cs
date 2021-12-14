@@ -317,7 +317,8 @@ public class checkManager : MonoBehaviour
             //newOptions.GetComponent<changeColor>().textColor = 0;
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if(option == 1)
+                
+                if (option == 1)
                 {
                     BlackAnimator.SetTrigger("isBlackOut");
                     Debug.Log("go home, change scene");
@@ -358,11 +359,13 @@ public class checkManager : MonoBehaviour
 
             if(option<3 && Input.GetKeyDown(KeyCode.DownArrow))
             {
+                Audiomanager.Instance.PlaySound(Audiomanager.Instance.optionSound, Audiomanager.Instance.optionVolume);
                 option++;
                 newOptionsUI.transform.position = new Vector3(newOptionsUI.transform.position.x, newOptionsUI.transform.position.y - UIMove);
             }
             if(option >1 && Input.GetKeyDown(KeyCode.UpArrow))
             {
+                Audiomanager.Instance.PlaySound(Audiomanager.Instance.optionSound, Audiomanager.Instance.optionVolume);
                 option--;
                 newOptionsUI.transform.position  = new Vector3(newOptionsUI.transform.position.x, newOptionsUI.transform.position.y+ UIMove);
             }

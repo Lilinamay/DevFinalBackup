@@ -24,6 +24,7 @@ public class enemyBMove : MonoBehaviour
     public float chargeCD = 0;
     public LayerMask layerMask;
     public SpriteRenderer pRenderer;
+    public bool canDashSound;
 
     enemyBehavior behavior;
     ///[SerializeField] private Sprite[] IdleSprites;
@@ -98,10 +99,20 @@ public class enemyBMove : MonoBehaviour
             //walk
             enemyBody.velocity = new Vector2(enemySpeed, 0);
         }
+        if (dashCD == 4)
+        {
+            Audiomanager.Instance.PlaySound(Audiomanager.Instance.enemyDashSound, Audiomanager.Instance.enemyDashVolume);
+        }
 
         if (dashCD <= 4 && dashCD >= 2)
         {
             //DASH
+            if (canDashSound)
+            {
+                canDashSound = false;
+                Audiomanager.Instance.PlaySound(Audiomanager.Instance.enemyDashSound, Audiomanager.Instance.enemyDashVolume);
+                StartCoroutine(DashSoundCd());
+            }
             enemyBody.velocity = new Vector2(enemySpeed * 3, 0);
             EnemyBAnimator.SetBool("canCharge", false);
             EnemyBAnimator.SetBool("canAttack", true);
@@ -128,7 +139,11 @@ public class enemyBMove : MonoBehaviour
            chargeCD -= Time.deltaTime;
         }
 
-       
+       IEnumerator DashSoundCd()
+        {
+            yield return new WaitForSecondsRealtime(3f);
+            canDashSound = true;
+        }
     }
 
     private void FixedUpdate()

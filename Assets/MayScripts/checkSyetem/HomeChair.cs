@@ -152,11 +152,13 @@ public class HomeChair : MonoBehaviour
 
             if (option < 3 && Input.GetKeyDown(KeyCode.DownArrow))
             {
+                Audiomanager.Instance.PlaySound(Audiomanager.Instance.optionSound, Audiomanager.Instance.optionVolume);
                 option++;
                 newOptionsUI.transform.position = new Vector3(newOptionsUI.transform.position.x, newOptionsUI.transform.position.y - 1.05f);
             }
             if (option > 1 && Input.GetKeyDown(KeyCode.UpArrow))
             {
+                Audiomanager.Instance.PlaySound(Audiomanager.Instance.optionSound, Audiomanager.Instance.optionVolume);
                 option--;
                 newOptionsUI.transform.position = new Vector3(newOptionsUI.transform.position.x, newOptionsUI.transform.position.y + 1.05f);
             }

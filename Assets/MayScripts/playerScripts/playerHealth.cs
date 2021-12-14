@@ -63,6 +63,7 @@ public class playerHealth : MonoBehaviour
         {
             if (invinsibleTimer <= 0)
             {
+                Audiomanager.Instance.PlaySound(Audiomanager.Instance.playerTakeDamageSound, Audiomanager.Instance.playerTakeDamageVolume);
                 playerHealthstat--;                                             //-health, cameraShake maybe?
                 invinsibleTimer = invinsibleT;
                 myRenderer.color = Color.red;

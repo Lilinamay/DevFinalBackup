@@ -35,8 +35,8 @@ public class riverBehavior : MonoBehaviour
         if(collision.name == "Player")
         {
             //playerHealth--;
-            
-            
+
+            Audiomanager.Instance.PlaySound(Audiomanager.Instance.spikeSound, Audiomanager.Instance.spikeVolume);
             playerRenderer.color = Color.red;
             mybody.velocity = Vector3.zero;
             StartCoroutine(changeColor());

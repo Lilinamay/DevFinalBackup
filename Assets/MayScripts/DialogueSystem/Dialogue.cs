@@ -47,6 +47,7 @@ public class Dialogue : MonoBehaviour
         if (haveTriggered == false && !dialogue2Complete && GetComponent<NPCTrigger>().convTriggered)
         {
             Debug.Log("trigger conversation");
+            Audiomanager.Instance.PlaySound(Audiomanager.Instance.dialogSound, Audiomanager.Instance.dialogVolume);
             triggered = true;
             haveTriggered = true;
             sentences.Clear();

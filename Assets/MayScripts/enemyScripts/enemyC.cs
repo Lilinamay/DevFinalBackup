@@ -124,6 +124,7 @@ public class enemyC : MonoBehaviour
             //EnemyBAnimator.SetBool("canAttack", true);
             if (!hasShoot)
             {
+                Audiomanager.Instance.PlaySound(Audiomanager.Instance.enemyChargeAttackSound, Audiomanager.Instance.enemyChargeAttackVolume);
                 GameObject newBall = Instantiate(arrow, transform.position, transform.rotation); //default to player's position/rotation
                 newBall.transform.SetParent(gameObject.transform);
                 newBall.GetComponent<bulletBehavior>().OriginPos = gameObject.transform.position;

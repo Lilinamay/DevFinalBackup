@@ -89,6 +89,7 @@ public class playerEnergy : MonoBehaviour
         if (timer > 1 && GetComponent<playerHealth>().playerHealthstat < GetComponent<playerHealth>().myHealth && !toHealth)
         {
             toHealth = true;
+            Audiomanager.Instance.PlaySound(Audiomanager.Instance.gainHealthSound, Audiomanager.Instance.gainHealthVolume);
             Debug.Log("get Health");
             energy -= enToLife;
             GetComponent<playerHealth>().playerHealthstat++;
