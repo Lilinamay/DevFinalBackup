@@ -105,7 +105,7 @@ public class HomeChair : MonoBehaviour
             //newOptions.GetComponent<changeColor>().textColor = 0;
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (option == 1)
+                if (option == 1 && !checkmanager.first)
                 {
                     newOptions.GetComponent<changeColor>().textColor = 1;
                     BlackAnimator.SetTrigger("isBlackOut");
@@ -117,8 +117,6 @@ public class HomeChair : MonoBehaviour
                         StartCoroutine(waitForTrans());
                         Come = false;
                     }
-
-
                 }
                 if (option == 2)
                 {

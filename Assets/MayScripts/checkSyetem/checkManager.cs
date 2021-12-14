@@ -131,11 +131,14 @@ public class checkManager : MonoBehaviour
 
             if (first)
             {
+                GetComponent<PlayerMove>().disableMove = false;
+                GetComponent<playerAttack>().canAttack = true;
                 PlayerAnimator.SetBool("isSitting", false);
                 PlayerAnimator.SetBool("isStanding", true);
                 PlayerAnimator.SetBool("isWalking", false);
                 PlayerAnimator.SetBool("isJumpDown", false);
                 PlayerAnimator.SetBool("isJumpUp", false);
+
                 GetComponent<playerHealth>().respawnBack = false;
             }
             GetComponent<playerHealth>().respawn = false;

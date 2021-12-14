@@ -30,6 +30,7 @@ public class playerHealth : MonoBehaviour
     public GameObject player;
     PlayerMove pMove;
     playerAttack pAttack;
+    //checkManager check;
 
 
     // Start is called before the first frame update
@@ -49,7 +50,7 @@ public class playerHealth : MonoBehaviour
         Debug.Log("timer" + invinsibleTimer);
         if (playerHealthstat <= 0)              //death
         {
-            StartCoroutine(disableWalk());
+            //StartCoroutine(disableWalk());
             PlayerMove.Globals.stopWalkSound = true;
             respawn = true;
             //respawned = true;
@@ -66,20 +67,20 @@ public class playerHealth : MonoBehaviour
         }
     }
 
-    IEnumerator disableWalk()
-    {
-        yield return new WaitForSecondsRealtime(0f);
-        pMove.disableMove = true;
-        pAttack.canAttack = false;
-        StartCoroutine(enableWalk());
-    }
+    //IEnumerator disableWalk()
+    //{
+    //    yield return new WaitForSecondsRealtime(0f);
+    //    pMove.disableMove = true;
+    //    pAttack.canAttack = false;
+    //    //StartCoroutine(enableWalk());
+    //}
 
-    IEnumerator enableWalk()
-    {
-        yield return new WaitForSecondsRealtime(2.0f);
-        pMove.disableMove = false;
-        pAttack.canAttack = true;
-    }
+    //IEnumerator enableWalk()
+    //{
+    //    yield return new WaitForSecondsRealtime(2.0f);
+    //    pMove.disableMove = false;
+    //    pAttack.canAttack = true;
+    //}
 
     private void OnTriggerStay2D(Collider2D collision)
     {
